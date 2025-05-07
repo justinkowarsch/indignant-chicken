@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[8947],{6600:e=>{e.exports=JSON.parse('{"authors":[{"name":"Ernest Sludge","title":"Yours Truly","url":"/ernest-sludge","page":{"permalink":"/blog/authors/ernest-sludge"},"imageURL":"/img/sludge_grumpy.png","key":"es","count":1}]}')}}]);
