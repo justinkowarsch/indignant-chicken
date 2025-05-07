@@ -23,7 +23,7 @@ const FeatureList: FeatureItem[] = [
     id: "easy-to-use",
   },
   {
-    title: "Systems Analysis",
+    title: "System-antics Analysis",
     Svg: require("@site/static/img/field_notes.svg").default,
     description: (
       <>
@@ -34,7 +34,7 @@ const FeatureList: FeatureItem[] = [
     id: "trash",
   },
   {
-    title: "The Escalation Log",
+    title: "Case Studies in Absurdity",
     Svg: require("@site/static/img/field_notes.svg").default,
     description: (
       <>

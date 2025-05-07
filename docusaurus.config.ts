@@ -5,8 +5,8 @@ import { themes as prismThemes } from "prism-react-renderer";
 
 const config: Config = {
   title: "theSludge.report",
-  tagline: "Under construction—stick around, it's going to get interesting!",
-  favicon: "img/sludge.png",
+  tagline: "100% fiction, unless it sounds familiar",
+  favicon: "img/sludge_grumpy.png",
 
   url: "https://thesludge.report",
   baseUrl: "/",
@@ -69,15 +69,15 @@ const config: Config = {
       title: "theSludge.report",
       logo: {
         alt: "My Site Logo",
-        src: "img/sludge.png",
+        src: "img/sludge_grumpy.png",
       },
       items: [
-        {
+        /*  {
           type: "docSidebar",
           sidebarId: "tutorialSidebar",
           position: "left",
           label: "Tutorial",
-        },
+        }, */
         { to: "/blog", label: "Blog", position: "left" },
       ],
     },
