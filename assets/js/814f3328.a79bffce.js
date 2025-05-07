@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[7472],{5513:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Welcome to theSludge.report","permalink":"/blog/welcome","unlisted":false,"date":"2025-05-07T00:19:35.000Z"}]}')}}]);

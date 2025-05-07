@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://thesludge.report/blog</id>
+    <title>theSludge.report Blog</title>
+    <updated>2025-05-07T00:19:35.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://thesludge.report/blog"/>
+    <subtitle>theSludge.report Blog</subtitle>
+    <icon>https://thesludge.report/img/sludge.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Welcome to theSludge.report]]></title>
+        <id>https://thesludge.report/blog/welcome</id>
+        <link href="https://thesludge.report/blog/welcome"/>
+        <updated>2025-05-07T00:19:35.000Z</updated>
+        <summary type="html"><![CDATA[Welcome to theSludge.report]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="welcome-to-thesludgereport">Welcome to theSludge.report<a href="https://thesludge.report/blog/welcome#welcome-to-thesludgereport" class="hash-link" aria-label="Direct link to Welcome to theSludge.report" title="Direct link to Welcome to theSludge.report">​</a></h2>
+<p>Welcome to theSludge.report — part blog, part lab notebook, part playground for building my own damn tools instead of tolerating someone else’s.</p>
+]]></content>
+        <author>
+            <name>Ernest Sludge</name>
+            <uri>/ernest-sludge</uri>
+        </author>
+        <category label="General" term="General"/>
+    </entry>
+</feed>
