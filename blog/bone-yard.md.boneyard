@@ -1,0 +1,103 @@
+# 🦴 The Bone Yard
+
+Welcome to the repository of glorious scraps—phrases too spicy, jokes too feral, or rants too radioactive to make it past editorial. For now.
+
+> _“Kill your darlings,” they say. But maybe just stash them for later._
+
+---
+
+## 🗣 Unused Jokes or Snark
+
+> One-liners, sarcastic gems, and zingers that didn’t quite fit—yet.
+
+- "The dashboard is less 'cockpit' and more 'bucket of bolts on fire.'"
+- "Using the app is like yelling at a vending machine that only speaks Latin."
+- "Congrats, you found the submit button—it was behind a paywall and two riddles."
+
+<EmailCard
+sender="Ernest Sludge"
+recipient="Team DevOps"
+subject="Annual Renewal Reminder"
+day="May 4, 2025"
+
+> Hey team,
+> <br />
+> Just a friendly reminder that our enterprise software renewal is due next
+> week. Please remember to update your feature‑requests list before then!
+> <br />
+
+  <!-- prettier-ignore -->
+
+Cheers,<br />
+Ernest
+</EmailCard>
+
+---
+
+## 🧨 Deleted Rants
+
+> Overheated takes that need to cool off in the penalty box.
+
+- I swear, the people who design these workflows must dream in flowcharts and scream in user stories.
+- Why have one confirmation modal when you could have five? And make them contradict each other. Excellence.
+
+### Poor UI/UX
+
+These applications' UI/UX generally do one thing well, discombobulate. There are more menus and submenus than grains of sand on a beach. It's like the Vegas Strip. Much like the aforementioned *NAS*ty Filesystem Swamp and Mount SharePoint-of-No-Return, they keep you searching. Oh sure, you can create some favorites, good luck finding them in the first place.
+
+If you do luck out and actually find what you're looking for, the page is likely to wind up with too much unimportant information and too many buttons that either don't make sense, or are of no use.
+
+There is one notable example that comes to mind, a button with a check on it next to a button with a clock with a check over the bottom right corner. Your intuition might say, hit the check button to get what you want, but no, that's incorrect, that's just a button that "validates the screen". The button you really want hit, to do what you want, is the clock with the tiny check on it. This lack of intuitiveness is a drain on the user. This may seem like an insignificant inconvenience, but it's indicative of most of the application's lack of intuitiveness and superfluity.
+
+### One Size Fits Most
+
+The organizations who create the _shells_ do this on purpose, to sell to as many organizations as they can, then configure these shells to "adapt" to an organizations specific "needs". This usually leaves the application cluttered and confusing because there is only so much configuration they can do before they're writing custom apps for every buyer. So you're stuck.
+
+:::note[note-to-self: things to talk about/incorporate]
+
+- more config and consulting than actual productivity tools
+- far too much information displayed
+- far too many buttons with dubious purpose
+- by 100% us 5% &larr; I really don't like to use this smaller percentage...it's impossible to truly quantify. But there is a qualitative _feeling_ that much of the application isn't being use. Now, if we dial that in a bit, much of the **UI** isn't being use, that's a sign.
+
+:::
+
+My own personal experience with trying to choose one for my own business...
+
+- very expensive. Features over function(?).
+- tons of features, but was hard to know which would be useful, if any.
+- Much of these applications would force us to do things completely differently (although I'm not opposed to this, so this is a really terrible argument against them).
+
+---
+
+## ✍️ Good Sentences That Didn’t Survive
+
+> They had promise, but no place... yet.
+
+- “This app isn’t a solution—it’s a hostile negotiation between business needs and developer indifference.”
+- “You don’t use this tool, you endure it.”
+
+---
+
+## 💡 Fragment Ideas or Alternate Takes
+
+> Sparks of insight, half-written metaphors, weirdly vivid analogies.
+
+- "It’s like trying to track a budget with a Magic 8 Ball that lies."
+- The iconography is like IKEA instructions drawn by Kafka.
+- What if the app had a “pity mode” for when users fail 3+ times?
+- Farcical Archipelago of Affliction.
+
+---
+
+## 🚧 Held for Refactor
+
+> Text you want to revisit, sharpen, or reframe.
+
+```mdx
+:::note
+If the field label makes no sense, it’s probably because it wasn’t meant for you—it’s bound to a column name someone once whispered into a data lake.
+:::
+
+---
+```

@@ -1,0 +1,49 @@
+/* src/components/EmailCard.css */
+.email-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    background: #fafafa;
+    color: #333; /* darker default text for readability */
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .email-card__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+  
+  .email-card__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #bbb;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+  
+  .email-card__meta {
+    flex: 1;
+  }
+  
+  .email-card__subject {
+    margin-top: 0.25rem;
+    font-style: italic;
+    color: #444; /* darker subject for better contrast */
+  }
+  
+  .email-card__date {
+    font-size: 0.875rem;
+    color: #555; /* darker date text */
+  }
+  
+  .email-card__body {
+    padding-top: 0.5rem;
+    border-top: 1px solid #eee;
+  }
