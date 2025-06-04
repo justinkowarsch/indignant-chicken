@@ -33,16 +33,18 @@ const config: Config = {
     [
       "classic",
       {
-        docs: {
-          sidebarPath: "./sidebars.ts",
-        },
+        docs: false,
         blog: {
+          routeBasePath: "/",
           showReadingTime: true,
           readingTime: ({ content, frontMatter, defaultReadingTime }) => {
             if (typeof frontMatter.readingTime === "number") {
               return frontMatter.readingTime;
             }
-            return defaultReadingTime({ content });
+            return defaultReadingTime({
+              content,
+              locale: "en",
+            });
           },
           feedOptions: {
             type: ["rss", "atom"],
@@ -63,7 +65,6 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
     image: "img/sludge-social-card.png",
     navbar: {
       title: "theSludge.report",
@@ -71,47 +72,13 @@ const config: Config = {
         alt: "My Site Logo",
         src: "img/sludge_grumpy.png",
       },
-      items: [
-        /*  {
-          type: "docSidebar",
-          sidebarId: "tutorialSidebar",
-          position: "left",
-          label: "Tutorial",
-        }, */
-        { to: "/blog", label: "Blog", position: "left" },
-      ],
+      items: [{ to: "/blog", label: "Blog", position: "left" }],
     },
     footer: {
       style: "dark",
       links: [
         {
-          title: "Docs",
-          items: [
-            {
-              label: "Tutorial",
-              to: "/docs/intro",
-            },
-          ],
-        },
-        {
-          title: "Community",
-          items: [
-            {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
-            },
-            {
-              label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
-            },
-            {
-              label: "X",
-              href: "https://x.com/docusaurus",
-            },
-          ],
-        },
-        {
-          title: "More",
+          title: "Read",
           items: [
             {
               label: "Blog",

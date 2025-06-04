@@ -14,3 +14,7 @@ esi:
   label: E.S.I.
   permalink: /esi
   description: Enterprise Software Inefficiency
+sso:
+  label: S.S.O.
+  permalink: /sso
+  description: Single Sign On
