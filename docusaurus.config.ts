@@ -72,7 +72,6 @@ const config: Config = {
         alt: "My Site Logo",
         src: "img/sludge_grumpy.png",
       },
-      items: [{ to: "/blog", label: "Blog", position: "left" }],
     },
     footer: {
       style: "dark",
@@ -82,7 +81,7 @@ const config: Config = {
           items: [
             {
               label: "Blog",
-              to: "/blog",
+              to: "/",
             },
           ],
         },
