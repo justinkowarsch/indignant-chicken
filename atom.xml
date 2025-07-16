@@ -9,12 +9,11 @@
     <icon>https://thesludge.report/img/sludge_grumpy.png</icon>
     <entry>
         <title type="html"><![CDATA[Field Note 001 - One-Time Registration Codes]]></title>
-        <id>https://thesludge.report/field_note_ 001_-_one-time_registration_codes</id>
-        <link href="https://thesludge.report/field_note_ 001_-_one-time_registration_codes"/>
+        <id>https://thesludge.report/field-notes/one-time_registration_codes</id>
+        <link href="https://thesludge.report/field-notes/one-time_registration_codes"/>
         <updated>2025-07-15T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[How many one-time registration codes can you get in one morning before your brain explodes?]]></summary>
         <content type="html"><![CDATA[<p>How many one-time registration codes can you get in one morning before your brain explodes?</p>
-<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>LEGAL NOTICE AND DISCLAIMER</summary><div><div class="collapsibleContent_i85q"><img src="https://thesludge.report/img/sludge_honorable_no_bg.png" alt="Sludge, Esq." style="float:left;width:125px;display:block;margin:0 0 0 0"><p>Be it known to all readers, prospective litigants, and weary HR drones that all personally identifying particulars—including but not limited to any true names, precise dates, job titles, salary ranges, or corporate pseudonyms suspiciously similar to actual organizations—have been judiciously expunged from these illustrative narratives. This redaction serves the dual purpose of (a) safeguarding the aforementioned innocents, and (b) shielding yours truly from frivolous lawsuits, needless performance improvement plans, and impromptu “we need to talk” meetings that could easily inspire an entire future blog post.</p><p>Should any perspicacious sleuth discern veritable correlations to real‑world events, such recognition is hereby declared purely fortuitous, coincidental, and entirely divorced from fact. All scenarios, characters, and dialogues contained herein are offered as hypothetical constructs, presented “as is,” without warranty of reality, veracity, or immunity from HR retribution. Any resemblance to actual persons—living, departed, or reluctantly employed—is strictly the result of the reader’s fertile imagination and in no way a matter of record, precedent, or admissible evidence.</p><p>Proceed at your own risk, and remember: curiosity may have killed the cat, but it will not indemnify you against mandatory sensitivity training.</p></div></div></details>
 <p>I'm logged into my work computer in my office that takes two badges and a visual inspection to get to, connected to the office network and using the much-touted SSO password — and yet...</p>
 <p>(Select delivery method: Email, Call, Text)</p>
 <p>Your One-Time Registration Code is 2847.</p>
@@ -35,7 +34,8 @@
 <p>I'd file a ticket.</p>
 <p>But I'm sure I'll need a code.</p>
 <p>(Select delivery method: Email, Call, Text)</p>
-<p><strong>One-Time Registration</strong><sup>TM</sup>.</p>]]></content>
+<p><strong>One-Time Registration</strong><sup>TM</sup>.</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>LEGAL NOTICE AND DISCLAIMER</summary><div><div class="collapsibleContent_i85q"><img src="https://thesludge.report/img/sludge_honorable_no_bg.png" alt="Sludge, Esq." style="float:left;width:125px;display:block;margin:0 0 0 0"><p>Be it known to all readers, prospective litigants, and weary HR drones that all personally identifying particulars—including but not limited to any true names, precise dates, job titles, salary ranges, or corporate pseudonyms suspiciously similar to actual organizations—have been judiciously expunged from these illustrative narratives. This redaction serves the dual purpose of (a) safeguarding the aforementioned innocents, and (b) shielding yours truly from frivolous lawsuits, needless performance improvement plans, and impromptu “we need to talk” meetings that could easily inspire an entire future blog post.</p><p>Should any perspicacious sleuth discern veritable correlations to real‑world events, such recognition is hereby declared purely fortuitous, coincidental, and entirely divorced from fact. All scenarios, characters, and dialogues contained herein are offered as hypothetical constructs, presented “as is,” without warranty of reality, veracity, or immunity from HR retribution. Any resemblance to actual persons—living, departed, or reluctantly employed—is strictly the result of the reader’s fertile imagination and in no way a matter of record, precedent, or admissible evidence.</p><p>Proceed at your own risk, and remember: curiosity may have killed the cat, but it will not indemnify you against mandatory sensitivity training.</p></div></div></details>]]></content>
         <author>
             <name>Ernest Sludge</name>
             <uri>/ernest-sludge</uri>
