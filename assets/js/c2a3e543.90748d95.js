@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[8885],{2937:e=>{e.exports=JSON.parse('{"tags":[{"label":"Field Notes","permalink":"/tags/field-notes","count":1}]}')}}]);
