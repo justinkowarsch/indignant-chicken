@@ -2,11 +2,46 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://thesludge.report</id>
     <title>theSludge.report Blog</title>
-    <updated>2025-05-01T00:00:00.000Z</updated>
+    <updated>2025-07-15T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://thesludge.report"/>
     <subtitle>theSludge.report Blog</subtitle>
     <icon>https://thesludge.report/img/sludge_grumpy.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Field Note 001 - One-Time Registration Codes]]></title>
+        <id>https://thesludge.report/field_note_ 001_-_one-time_registration_codes</id>
+        <link href="https://thesludge.report/field_note_ 001_-_one-time_registration_codes"/>
+        <updated>2025-07-15T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[How many one-time registration codes can you get in one morning before your brain explodes?]]></summary>
+        <content type="html"><![CDATA[<p>How many one-time registration codes can you get in one morning before your brain explodes?</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>LEGAL NOTICE AND DISCLAIMER</summary><div><div class="collapsibleContent_i85q"><img src="https://thesludge.report/img/sludge_honorable_no_bg.png" alt="Sludge, Esq." style="float:left;width:125px;display:block;margin:0 0 0 0"><p>Be it known to all readers, prospective litigants, and weary HR drones that all personally identifying particulars—including but not limited to any true names, precise dates, job titles, salary ranges, or corporate pseudonyms suspiciously similar to actual organizations—have been judiciously expunged from these illustrative narratives. This redaction serves the dual purpose of (a) safeguarding the aforementioned innocents, and (b) shielding yours truly from frivolous lawsuits, needless performance improvement plans, and impromptu “we need to talk” meetings that could easily inspire an entire future blog post.</p><p>Should any perspicacious sleuth discern veritable correlations to real‑world events, such recognition is hereby declared purely fortuitous, coincidental, and entirely divorced from fact. All scenarios, characters, and dialogues contained herein are offered as hypothetical constructs, presented “as is,” without warranty of reality, veracity, or immunity from HR retribution. Any resemblance to actual persons—living, departed, or reluctantly employed—is strictly the result of the reader’s fertile imagination and in no way a matter of record, precedent, or admissible evidence.</p><p>Proceed at your own risk, and remember: curiosity may have killed the cat, but it will not indemnify you against mandatory sensitivity training.</p></div></div></details>
+<p>I'm logged into my work computer in my office that takes two badges and a visual inspection to get to, connected to the office network and using the much-touted SSO password — and yet...</p>
+<p>(Select delivery method: Email, Call, Text)</p>
+<p>Your One-Time Registration Code is 2847.</p>
+<p>(Select delivery method: Email, Call, Text)</p>
+<p>Your One-Time Registration Code is 9123.</p>
+<p>(Select delivery method: Email, Call, Text)</p>
+<p>Your One-Time Registration Code is 4861.</p>
+<p>(Select delivery method: Email, Call, Text)</p>
+<p>Your One-Time Registration Code is 7139.</p>
+<p>(Select delivery method: Email, Call, Text)</p>
+<p>Your One-Time Registration Code is 0029.</p>
+<p>(Select delivery method: Email, Call, Text)</p>
+<p>Your One-Time Registration Code is 1480.</p>
+<p>You've been successfully logged out.</p>
+<p>"One-Time." "Registration." Abject lies.</p>
+<p><strong>One-Time Registration</strong><sup>TM</sup></p>
+<p>I clearly can't get anything done with just <em>one</em> code, nor can I do anything without first <em>registering</em> with a system I'm already a user of. The paranoid can never be too sure you're you.</p>
+<p>I'd file a ticket.
+But I'm sure I'll need a code.
+(Select delivery method: Email, Call, Text)
+<strong>One-Time Registration</strong><sup>TM</sup>.</p>]]></content>
+        <author>
+            <name>Ernest Sludge</name>
+            <uri>/ernest-sludge</uri>
+        </author>
+        <category label="Field Notes" term="Field Notes"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Welcome to theSludge.report]]></title>
         <id>https://thesludge.report/welcome</id>
@@ -19,12 +54,12 @@
 <ul>
 <li>faced down a litany of inexplicable error messages in the newfangled HR app,</li>
 <li>watched business development write a check you know you're weekends and sanity will have to cash,</li>
-<li>Or get ping-ponged between one "teammate" after another basically saying "go ask your mom, I'm tired",</li>
+<li>or get ping-ponged between one "teammate" after another basically saying "go ask your mom, I'm tired",</li>
 </ul>
-<p>...then you, dear reader, have faced the Sludge.</p>
+<p>...then you, dear reader, have faced the sludge and I'm here to help you laugh about it.</p>
 <p>Here's what you can expect from theSludge.report:</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="-field-memos">🧪 Field Memos<a href="https://thesludge.report/welcome#-field-memos" class="hash-link" aria-label="Direct link to 🧪 Field Memos" title="Direct link to 🧪 Field Memos">​</a></h2>
-<p>Quick-hit dispatches from the bureaucratic trenches — raw, unfiltered, and usually written mid-meeting while someone explains a workflow no one will follow. These are the moment-to-moment chronicles of organizational life: form-filling, checkbox-clicking, and synergy so passive it might be declared legally inert.</p>
+<p>Dispatches from the bureaucratic trenches — raw, unfiltered, and usually written mid-meeting while someone explains a workflow no one will follow. These are the moment-to-moment chronicles of organizational life: form-filling, checkbox-clicking, and synergy so passive it might be declared legally inert.</p>
 <blockquote>
 <p>Think of them as corporate haikus — if haikus wore badge lanyards and had to submit time sheets.</p>
 </blockquote>
