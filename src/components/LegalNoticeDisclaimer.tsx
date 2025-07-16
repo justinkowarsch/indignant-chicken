@@ -19,7 +19,8 @@ export default function LegalNoticeDisclaimer(): JSX.Element {
       <p>
         Be it known to all readers, prospective litigants, and weary HR drones
         that all personally identifying particulars—including but not limited to
-        true names, precise dates, and corporate affiliations—have been
+        any true names, precise dates, job titles, salary ranges, or corporate
+        pseudonyms suspiciously similar to actual organizations—have been
         judiciously expunged from these illustrative narratives. This redaction
         serves the dual purpose of (a) safeguarding the aforementioned
         innocents, and (b) shielding yours truly from frivolous lawsuits,

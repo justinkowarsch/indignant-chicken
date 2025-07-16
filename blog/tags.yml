@@ -18,3 +18,7 @@ sso:
   label: S.S.O.
   permalink: /sso
   description: Single Sign On
+fn:
+  label: Field Notes
+  permalink: /fieldnotes
+  description: Field Notes
