@@ -20,5 +20,9 @@ sso:
   description: Single Sign On
 fn:
   label: Field Notes
-  permalink: /fieldnotes
+  permalink: /field-notes
   description: Field Notes
+cs:
+  label: Case Study
+  permalink: /case-studies
+  description: Case Study
