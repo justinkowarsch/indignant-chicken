@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[8885],{2937:e=>{e.exports=JSON.parse('{"tags":[{"label":"Case Study","permalink":"/tags/case-studies","description":"Case Study","count":1},{"label":"Field Notes","permalink":"/tags/field-notes","description":"Field Notes","count":1}]}')}}]);

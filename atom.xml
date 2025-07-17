@@ -2,11 +2,75 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://thesludge.report</id>
     <title>theSludge.report Blog</title>
-    <updated>2025-07-15T00:00:00.000Z</updated>
+    <updated>2025-07-16T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://thesludge.report"/>
     <subtitle>theSludge.report Blog</subtitle>
     <icon>https://thesludge.report/img/sludge_grumpy.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Case Study - Misdemeanors and Misdirection]]></title>
+        <id>https://thesludge.report/case-study/misdemeanors_and_misdirection</id>
+        <link href="https://thesludge.report/case-study/misdemeanors_and_misdirection"/>
+        <updated>2025-07-16T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[The last dollar in my pocket says the founders of WerkdayTM have never used their own product.]]></summary>
+        <content type="html"><![CDATA[<p>The last dollar in my pocket says the founders of Werkday<sup>TM</sup> have never used their own product.</p>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><p>This post might be a bit much for sensitive ears.</p><div style="margin-bottom:1rem"><strong>Language Setting:</strong><div style="display:flex;flex-direction:column;margin-top:0.5rem;gap:0.5rem"><label title="For those moments when life demands full-throated honesty and a few well-placed f-bombs."><input type="radio"> <!-- -->Explicit (a.k.a. grown-up mode)</label><label title="Not censored, just sheepishly ~struck through~ so we can all pretend it wasn’t there."><input type="radio" checked=""> <!-- -->PG (for people who like their profanity... lightly disguised)</label></div></div><p><del>Shit fucking</del> happens.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-proclamation">The Proclamation<a href="https://thesludge.report/case-study/misdemeanors_and_misdirection#the-proclamation" class="hash-link" aria-label="Direct link to The Proclamation" title="Direct link to The Proclamation">​</a></h2>
+<p>It's the Monday prior to payday which means you have an obligation to pay obeisance to the payroll overlords.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span><em>Revised</em> Royal Decree</div><div class="admonitionContent_BuS1"><p>Be it thus known that henceforth all hourly employees shall have their timesheets approved by their reeve no later than 10:00am on moon's day. Reeves who fail to meet this deadline shall be flogged by email into compliance.<sup id="fn1"><a href="https://thesludge.report/case-study/misdemeanors_and_misdirection#footnote1">1</a></sup></p></div></div>
+<p>So says the proclamation, and despite your proclivity for rebelliousness, you (try to) comply; it's better than the alternative.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-training-mirage">The Training Mirage<a href="https://thesludge.report/case-study/misdemeanors_and_misdirection#the-training-mirage" class="hash-link" aria-label="Direct link to The Training Mirage" title="Direct link to The Training Mirage">​</a></h2>
+<p>Several months prior to the roll out of Werkday<sup>TM</sup>, the overlords saw fit to begin end user training, which <em>supposedly</em> included training on approving your hourly direct report's timesheets, but it was so <del>damn</del> glitchy you only remember mentally checking out to navel gaze and ponder the machinations of insectoids.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-illusion-of-approval">The Illusion of Approval<a href="https://thesludge.report/case-study/misdemeanors_and_misdirection#the-illusion-of-approval" class="hash-link" aria-label="Direct link to The Illusion of Approval" title="Direct link to The Illusion of Approval">​</a></h2>
+<p>You decide to give it a go all on your own, poking around the software suite to see if modern software has come far enough since DOS to be mildly intuitive. Reality quickly frags your precarious hopes.</p>
+<p>There is no button for approving time anywhere that you can see.</p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>There are no shortage of buttons, mind you. That's the beauty of modern web apps, layer upon layer of buttons within buttons within buttons. It's genuinely miraculous that the modern dev team can find so many reasons to button-ify your dashboard with so few buttons immediately useful.</p></div></div>
+<p>Turns out the "Time and Scheduling Hub" is where you need to be, but this is buried under a submenu of a "Menu" button. The "Time and Scheduling Hub" though, is simply a dashboard of more buttons...wait, is that "Review and Approve Time" you see? It was a relatively simple task to get here...</p>
+<div class="theme-admonition theme-admonition-danger admonition_xJq3 alert alert--danger"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"></path></svg></span>error</div><div class="admonitionContent_BuS1"><p>Workers must have the same period schedule. Please modify the group of workers or select a period schedule in the prompt.</p></div></div>
+<p>The prompt:
+Date: (today's date)
+Review my direct reports only: true
+Workers (empty)
+Worker Type: Employee
+Employee Type: Regular
+Show: All Workers
+Period Schedule: Empty
+Pay Rate Type: Hour</p>
+<p>Period schedule has roughly 40 options to select from....but they did provide a handy option: "My Team's Period Schedules".</p>
+<div class="theme-admonition theme-admonition-danger admonition_xJq3 alert alert--danger"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"></path></svg></span>error</div><div class="admonitionContent_BuS1"><p>No workers were found; change filter criteria.</p></div></div>
+<p>Which one?</p>
+<p>These error messages feel very cryptic.</p>
+<p>Digging out your seer stone, you simply start removing selections one at a time, until you find that if you simply clear <em>all fields</em> and you get an actual search result. That'd be a rather easy default...a blank form that returns a result, rather than a pre-populated form that returns errors.</p>
+<p>Moving on.</p>
+<p>To your not-so-astonished eyes, you finally find an "Approve" button.</p>
+<div class="theme-admonition theme-admonition-danger admonition_xJq3 alert alert--danger"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"></path></svg></span>error</div><div class="admonitionContent_BuS1"><p>Hours must be submitted before they can be approved.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="in-search-of-the-submit-button">In Search of the Submit Button<a href="https://thesludge.report/case-study/misdemeanors_and_misdirection#in-search-of-the-submit-button" class="hash-link" aria-label="Direct link to In Search of the Submit Button" title="Direct link to In Search of the Submit Button">​</a></h2>
+<p>In a desperate race to make it over the finish line before 10am, you visit your direct report's office to ask them to submit the time. Problem solved.</p>
+<p>"I don't have a submit button anywhere..."</p>
+<p>Satan has escorted you straight into Digital Hell making you wonder just what you did to deserve this fate and perform an inventory of all the wrongs you've committed.</p>
+<p>To your relief, your office neighbor, sensing your trepidation, steps in indicating they actually remember the training seminar and that you actually have to <em>SUBMIT</em> the employee's timesheet for them under <em>Enter Time for Worker</em>.</p>
+<p>How intuitive, you muse.</p>
+<p>Alas, no submit button...another button → submenu → submenu called "Review reveals the much-sought-after Submit button.</p>
+<p>Finally....</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-early-arrival-police">The Early Arrival Police<a href="https://thesludge.report/case-study/misdemeanors_and_misdirection#the-early-arrival-police" class="hash-link" aria-label="Direct link to The Early Arrival Police" title="Direct link to The Early Arrival Police">​</a></h2>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>alerts</div><div class="admonitionContent_BuS1"><ul>
+<li>On [date] you arrived early by 8 or more minutes.</li>
+<li>On [date] you arrived early by 8 or more minutes.</li>
+<li>On [date] you arrived early by 8 or more minutes.</li>
+<li>On [date] you arrived early by 8 or more minutes.</li>
+</ul></div></div>
+<p>Good god....</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="footnotes">Footnotes<a href="https://thesludge.report/case-study/misdemeanors_and_misdirection#footnotes" class="hash-link" aria-label="Direct link to Footnotes" title="Direct link to Footnotes">​</a></h2>
+<small id="footnote1"><p><sup>1</sup> This decree supersedes all previous decrees, unless those decrees
+were better received. In such cases, previous decrees may be reinstated by
+executive whim.</p></small>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>LEGAL NOTICE AND DISCLAIMER</summary><div><div class="collapsibleContent_i85q"><img src="https://thesludge.report/img/sludge_honorable_no_bg.png" alt="Sludge, Esq." style="float:left;width:125px;display:block;margin:0 0 0 0"><p>Be it known to all readers, prospective litigants, and weary HR drones that all personally identifying particulars—including but not limited to any true names, precise dates, job titles, salary ranges, or corporate pseudonyms suspiciously similar to actual organizations—have been judiciously expunged from these illustrative narratives. This redaction serves the dual purpose of (a) safeguarding the aforementioned innocents, and (b) shielding yours truly from frivolous lawsuits, needless performance improvement plans, and impromptu “we need to talk” meetings that could easily inspire an entire future blog post.</p><p>Should any perspicacious sleuth discern veritable correlations to real‑world events, such recognition is hereby declared purely fortuitous, coincidental, and entirely divorced from fact. All scenarios, characters, and dialogues contained herein are offered as hypothetical constructs, presented “as is,” without warranty of reality, veracity, or immunity from HR retribution. Any resemblance to actual persons—living, departed, or reluctantly employed—is strictly the result of the reader’s fertile imagination and in no way a matter of record, precedent, or admissible evidence.</p><p>Proceed at your own risk, and remember: curiosity may have killed the cat, but it will not indemnify you against mandatory sensitivity training.</p></div></div></details>]]></content>
+        <author>
+            <name>Ernest Sludge</name>
+            <uri>/ernest-sludge</uri>
+        </author>
+        <category label="Case Study" term="Case Study"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Field Note 001 - One-Time Registration Codes]]></title>
         <id>https://thesludge.report/field-notes/one-time_registration_codes</id>
