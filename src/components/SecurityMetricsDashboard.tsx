@@ -136,113 +136,52 @@ const SecurityMetricsDashboard: React.FC = () => {
   };
 
   return (
-    <div
-      style={{
-        border: "2px solid #2c3e50",
-        borderRadius: "12px",
-        padding: "25px",
-        margin: "20px 0",
-        backgroundColor: "#34495e",
-        color: "white",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          marginBottom: "25px",
-        }}
-      >
-        <h4
-          style={{
-            color: "#ecf0f1",
-            margin: 0,
-            fontSize: "24px",
-            fontFamily: "monospace",
-          }}
-        >
+    <div className="relative border-2 border-gray-700 rounded-xl p-6 my-5 bg-gray-600 text-white">
+      <div className="flex justify-between items-center mb-6">
+        <h4 className="text-gray-100 m-0 text-2xl font-mono">
           📊 Dietrich's Real-Time Security Dashboard
         </h4>
 
-        <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
-          <div style={{ fontSize: "12px", color: "#bdc3c7" }}>
+        <div className="flex items-center gap-4">
+          <div className="text-xs text-gray-300">
             Last Update: {lastUpdate.toLocaleTimeString()}
           </div>
           <button
             onClick={() => setIsLive(!isLive)}
-            style={{
-              backgroundColor: isLive ? "#e74c3c" : "#27ae60",
-              color: "white",
-              border: "none",
-              borderRadius: "6px",
-              padding: "8px 16px",
-              cursor: "pointer",
-              fontSize: "14px",
-              fontWeight: "bold",
-            }}
+            className={`text-white border-0 rounded-md px-4 py-2 cursor-pointer text-sm font-bold transition-colors duration-200 ${
+              isLive
+                ? "bg-red-600 hover:bg-red-700"
+                : "bg-green-600 hover:bg-green-700"
+            }`}
           >
             {isLive ? "⏸️ Stop Live" : "▶️ Go Live"}
           </button>
         </div>
       </div>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-          gap: "20px",
-        }}
-      >
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5">
         {metrics.map((metric) => (
           <div
             key={metric.id}
-            style={{
-              backgroundColor: "#2c3e50",
-              borderRadius: "8px",
-              padding: "20px",
-              border: "1px solid #34495e",
-            }}
+            className="bg-gray-700 rounded-lg p-5 border border-gray-600"
           >
-            <div
-              style={{
-                fontSize: "14px",
-                color: "#bdc3c7",
-                marginBottom: "8px",
-                fontWeight: "bold",
-              }}
-            >
+            <div className="text-sm text-gray-300 mb-2 font-bold">
               {metric.name}
             </div>
 
-            <div
-              style={{
-                fontSize: "32px",
-                fontWeight: "bold",
-                color: "#ecf0f1",
-                marginBottom: "10px",
-                fontFamily: "monospace",
-              }}
-            >
+            <div className="text-3xl font-bold text-gray-100 mb-2.5 font-mono">
               {metric.current.toLocaleString()}
               {metric.unit}
             </div>
 
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                marginBottom: "15px",
-              }}
-            >
-              <div style={{ fontSize: "12px", color: "#95a5a6" }}>
+            <div className="flex justify-between items-center mb-4">
+              <div className="text-xs text-gray-400">
                 Target: {metric.target.toLocaleString()}
                 {metric.unit}
               </div>
               <div
+                className="text-xs"
                 style={{
-                  fontSize: "12px",
                   color: getStatusColor(
                     metric.current,
                     metric.target,
@@ -256,29 +195,19 @@ const SecurityMetricsDashboard: React.FC = () => {
             </div>
 
             {/* Progress bar */}
-            <div
-              style={{
-                width: "100%",
-                backgroundColor: "#1a252f",
-                borderRadius: "4px",
-                height: "6px",
-                overflow: "hidden",
-              }}
-            >
+            <div className="w-full bg-gray-900 rounded h-1.5 overflow-hidden">
               <div
+                className="h-full rounded transition-all duration-300 ease-in-out"
                 style={{
                   width: `${Math.min(
                     (metric.current / metric.target) * 100,
                     100
                   )}%`,
-                  height: "100%",
                   backgroundColor: getStatusColor(
                     metric.current,
                     metric.target,
                     metric.trend
                   ),
-                  borderRadius: "4px",
-                  transition: "width 0.3s ease",
                 }}
               />
             </div>
@@ -286,35 +215,13 @@ const SecurityMetricsDashboard: React.FC = () => {
         ))}
       </div>
 
-      <div
-        style={{
-          marginTop: "25px",
-          padding: "15px",
-          backgroundColor: "#2c3e50",
-          borderRadius: "6px",
-          fontSize: "12px",
-          color: "#bdc3c7",
-          textAlign: "center",
-          fontStyle: "italic",
-        }}
-      >
+      <div className="mt-6 p-4 bg-gray-700 rounded-md text-xs text-gray-300 text-center italic">
         💡 Dashboard Tip: Higher frustration metrics indicate optimal security
         posture. If employees are happy, we're doing something wrong. — Dietrich
       </div>
 
       {isLive && (
-        <div
-          style={{
-            position: "absolute",
-            top: "10px",
-            right: "10px",
-            width: "12px",
-            height: "12px",
-            backgroundColor: "#e74c3c",
-            borderRadius: "50%",
-            animation: "pulse 1.5s infinite",
-          }}
-        />
+        <div className="absolute top-2.5 right-2.5 w-3 h-3 bg-red-600 rounded-full animate-pulse" />
       )}
     </div>
   );
