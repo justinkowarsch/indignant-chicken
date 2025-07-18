@@ -17,10 +17,24 @@ const DietrichTipGenerator: React.FC = () => {
   ];
 
   const [currentTip, setCurrentTip] = useState(tips[0]);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const generateNewTip = () => {
-    const randomIndex = Math.floor(Math.random() * tips.length);
-    setCurrentTip(tips[randomIndex]);
+    if (isAnimating) return; // Prevent multiple clicks during animation
+    
+    setIsAnimating(true);
+    
+    // Fade out current tip
+    setTimeout(() => {
+      // Change tip after fade out
+      const randomIndex = Math.floor(Math.random() * tips.length);
+      setCurrentTip(tips[randomIndex]);
+      
+      // Fade in new tip after a brief pause
+      setTimeout(() => {
+        setIsAnimating(false);
+      }, 150); // Brief pause then fade in
+    }, 200); // Fade out duration
   };
 
   return (
@@ -29,16 +43,23 @@ const DietrichTipGenerator: React.FC = () => {
         💡 Daily Security Wisdom from Dietrich
       </h4>
 
-      <div className="italic text-base leading-relaxed mb-4 min-h-[50px] flex items-center justify-center text-center">
+      <div className={`italic text-base leading-relaxed mb-4 min-h-[50px] flex items-center justify-center text-center transition-all duration-200 ${
+        isAnimating ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
+      }`}>
         "{currentTip}"
       </div>
 
       <div className="text-center">
         <button
           onClick={generateNewTip}
-          className="bg-blue-500 hover:bg-blue-600 text-white border-0 rounded px-5 py-2.5 cursor-pointer text-sm font-bold transition-colors duration-200"
+          disabled={isAnimating}
+          className={`text-white border-0 rounded px-5 py-2.5 text-sm font-bold transition-all duration-200 ${
+            isAnimating 
+              ? 'bg-gray-400 cursor-not-allowed scale-95' 
+              : 'bg-blue-500 hover:bg-blue-600 cursor-pointer hover:scale-105'
+          }`}
         >
-          Get New Wisdom
+          {isAnimating ? '🤔 Thinking...' : 'Get New Wisdom'}
         </button>
       </div>
     </div>
