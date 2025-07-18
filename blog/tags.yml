@@ -26,3 +26,11 @@ cs:
   label: Case Study
   permalink: /case-studies
   description: Case Study
+policy:
+  label: Policy
+  permalink: /policies
+  description: Policies
+people:
+  label: People
+  permalink: /people
+  description: People
