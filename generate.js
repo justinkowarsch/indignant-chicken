@@ -31,7 +31,7 @@ const dateStr = today.toISOString().split("T")[0];
 const slugPart = title
   .toLowerCase()
   .replace(/[^a-z0-9]+/g, "-")
-  .replace(/^-|-$/g, "");
+  .replace(/(^-)|(-$)/g, "");
 
 const filename = `${dateStr}-${slugPart}.mdx`;
 const filepath = path.join(__dirname, "blog", filename);

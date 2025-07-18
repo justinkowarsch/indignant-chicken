@@ -75,6 +75,7 @@ const config: Config = {
       crossorigin: "anonymous",
     },
   ],
+  plugins: ["./src/plugins/tailwind-plugin.js"],
   themeConfig: {
     image: "img/sludge-social-card.png",
     navbar: {
