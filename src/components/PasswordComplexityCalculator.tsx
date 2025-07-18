@@ -95,35 +95,13 @@ const PasswordComplexityCalculator: React.FC = () => {
   const rating = results ? getSecurityRating(results.securityScore) : null;
 
   return (
-    <div
-      style={{
-        border: "2px solid #34495e",
-        borderRadius: "10px",
-        padding: "25px",
-        margin: "20px 0",
-        backgroundColor: "#ecf0f1",
-      }}
-    >
-      <h4
-        style={{
-          color: "#2c3e50",
-          marginBottom: "20px",
-          textAlign: "center",
-          fontFamily: "monospace",
-        }}
-      >
+    <div className="border-2 border-solid border-gray-300 rounded-lg p-5 my-5 bg-gray-50">
+      <h4 className="text-gray-800 mb-5 text-center font-mono text-lg font-semibold">
         🔐 Dietrich's Password Complexity Calculator™
       </h4>
 
-      <div style={{ marginBottom: "20px" }}>
-        <label
-          style={{
-            display: "block",
-            marginBottom: "8px",
-            fontWeight: "bold",
-            color: "#2c3e50",
-          }}
-        >
+      <div className="mb-5">
+        <label className="block mb-2 font-bold text-gray-800">
           Enter Password for Analysis:
         </label>
         <input
@@ -131,84 +109,43 @@ const PasswordComplexityCalculator: React.FC = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Type your password here..."
-          style={{
-            width: "100%",
-            padding: "12px",
-            fontSize: "14px",
-            border: "2px solid #bdc3c7",
-            borderRadius: "4px",
-            fontFamily: "monospace",
-          }}
+          className="w-full p-3 text-sm border-2 border-gray-300 rounded font-mono"
         />
       </div>
 
-      <div style={{ textAlign: "center", marginBottom: "20px" }}>
+      <div className="text-center mb-5">
         <button
           onClick={handleCalculate}
           disabled={password.length === 0}
-          style={{
-            backgroundColor: password.length === 0 ? "#95a5a6" : "#34495e",
-            color: "white",
-            border: "none",
-            borderRadius: "6px",
-            padding: "12px 24px",
-            cursor: password.length === 0 ? "not-allowed" : "pointer",
-            fontSize: "16px",
-            fontWeight: "bold",
-          }}
+          className={`text-white border-0 rounded-md px-6 py-3 text-base font-bold transition-colors duration-200 ${
+            password.length === 0
+              ? "bg-gray-400 cursor-not-allowed"
+              : "bg-gray-600 hover:bg-gray-700 cursor-pointer"
+          }`}
         >
           Calculate Dietrich Score
         </button>
       </div>
 
       {showResults && results && rating && (
-        <div
-          style={{
-            backgroundColor: "white",
-            border: "1px solid #bdc3c7",
-            borderRadius: "8px",
-            padding: "20px",
-          }}
-        >
+        <div className="bg-white border border-gray-300 rounded-lg p-5">
           <div
-            style={{
-              textAlign: "center",
-              marginBottom: "20px",
-              padding: "15px",
-              backgroundColor: rating.color,
-              color: "white",
-              borderRadius: "6px",
-              fontWeight: "bold",
-              fontSize: "18px",
-            }}
+            className="text-center mb-5 p-4 text-white rounded-md font-bold text-lg"
+            style={{ backgroundColor: rating.color }}
           >
             Security Rating: {rating.rating}
           </div>
 
-          <div
-            style={{
-              fontStyle: "italic",
-              textAlign: "center",
-              marginBottom: "20px",
-              fontSize: "16px",
-              color: "#7f8c8d",
-            }}
-          >
+          <div className="italic text-center mb-5 text-base text-gray-500">
             "{rating.advice}"
           </div>
 
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "15px",
-            }}
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <h5 style={{ color: "#2c3e50", marginBottom: "10px" }}>
+              <h5 className="text-gray-800 mb-2.5 text-base font-semibold">
                 Password Analysis:
               </h5>
-              <ul style={{ listStyle: "none", padding: 0, fontSize: "14px" }}>
+              <ul className="list-none p-0 text-sm space-y-1">
                 <li>✅ Length: {results.length} characters</li>
                 <li>{results.hasNumbers ? "✅" : "❌"} Contains numbers</li>
                 <li>
@@ -227,34 +164,24 @@ const PasswordComplexityCalculator: React.FC = () => {
             </div>
 
             <div>
-              <h5 style={{ color: "#2c3e50", marginBottom: "10px" }}>
+              <h5 className="text-gray-800 mb-2.5 text-base font-semibold">
                 Dietrich's Metrics:
               </h5>
-              <div style={{ fontSize: "14px" }}>
-                <div style={{ marginBottom: "5px" }}>
+              <div className="text-sm space-y-1">
+                <div>
                   <strong>Complexity Factor:</strong> {results.complexityFactor}
                 </div>
-                <div style={{ marginBottom: "5px" }}>
+                <div>
                   <strong>User Happiness:</strong> {results.userHappiness}%
                 </div>
-                <div style={{ marginBottom: "5px" }}>
+                <div>
                   <strong>Security Score:</strong> {results.securityScore}
                 </div>
               </div>
             </div>
           </div>
 
-          <div
-            style={{
-              marginTop: "15px",
-              padding: "10px",
-              backgroundColor: "#f8f9fa",
-              borderRadius: "4px",
-              fontSize: "12px",
-              color: "#6c757d",
-              textAlign: "center",
-            }}
-          >
+          <div className="mt-4 p-2.5 bg-gray-50 rounded text-xs text-gray-500 text-center">
             Formula: Security = (Length × Complexity) ÷ (User Happiness²) × 100
           </div>
         </div>
