@@ -24,60 +24,19 @@ const DietrichTipGenerator: React.FC = () => {
   };
 
   return (
-    <div
-      style={{
-        border: "1px solid #ccc",
-        borderRadius: "8px",
-        padding: "20px",
-        margin: "20px 0",
-        backgroundColor: "#f8f9fa",
-      }}
-    >
-      <h4
-        style={{
-          color: "#2c3e50",
-          marginBottom: "15px",
-          textAlign: "center",
-        }}
-      >
+    <div className="border-2 border-solid border-gray-300 rounded-lg p-5 my-5 bg-gray-50">
+      <h4 className="text-gray-800 mb-4 text-center text-lg font-semibold">
         💡 Daily Security Wisdom from Dietrich
       </h4>
 
-      <div
-        style={{
-          fontStyle: "italic",
-          fontSize: "16px",
-          lineHeight: "1.5",
-          marginBottom: "15px",
-          minHeight: "50px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          textAlign: "center",
-        }}
-      >
+      <div className="italic text-base leading-relaxed mb-4 min-h-[50px] flex items-center justify-center text-center">
         "{currentTip}"
       </div>
 
-      <div style={{ textAlign: "center" }}>
+      <div className="text-center">
         <button
           onClick={generateNewTip}
-          style={{
-            backgroundColor: "#3498db",
-            color: "white",
-            border: "none",
-            borderRadius: "4px",
-            padding: "10px 20px",
-            cursor: "pointer",
-            fontSize: "14px",
-            fontWeight: "bold",
-          }}
-          onMouseOver={(e) =>
-            (e.currentTarget.style.backgroundColor = "#2980b9")
-          }
-          onMouseOut={(e) =>
-            (e.currentTarget.style.backgroundColor = "#3498db")
-          }
+          className="bg-blue-500 hover:bg-blue-600 text-white border-0 rounded px-5 py-2.5 cursor-pointer text-sm font-bold transition-colors duration-200"
         >
           Get New Wisdom
         </button>
