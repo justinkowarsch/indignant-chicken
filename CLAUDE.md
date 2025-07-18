@@ -10,36 +10,36 @@ This is a Docusaurus-based blog website called "theSludge.report" that appears t
 
 ### Installation
 ```bash
-yarn
+npm install
 ```
 
 ### Local Development
 ```bash
-yarn start
+npm run start
 ```
 Starts development server with hot reload at http://localhost:3000
 
 ### Build
 ```bash
-yarn build
+npm run build
 ```
 Generates static content into the `build` directory
 
 ### TypeScript Type Checking
 ```bash
-yarn typecheck
+npm run typecheck
 ```
 Runs TypeScript compiler to check for type errors
 
 ### Content Generation
 ```bash
-yarn tsr g fn "Post Title"
+npm run tsr g fn "Post Title"
 ```
 Creates a new field note blog post using the custom generator script
 
 ### Deployment
 ```bash
-yarn deploy
+npm run deploy
 ```
 Deploys to GitHub Pages (configured for user `justinkowarsch`)
 
@@ -62,10 +62,34 @@ Deploys to GitHub Pages (configured for user `justinkowarsch`)
 - **Docusaurus config**: `docusaurus.config.ts` - main site configuration
 - **Theme**: Uses classic preset with custom CSS and Mermaid support
 - **Deployment**: Configured for GitHub Pages deployment to `gh-pages` branch
+- **Tailwind CSS**: Integrated via custom Docusaurus plugin with dark mode support
 
 ### File Generation
 - **Generator script**: `generate.js` creates new field note posts with proper frontmatter
 - **Command alias**: `tsr` script command for generating content
+
+### Tailwind CSS Integration
+- **Plugin**: `src/plugins/tailwind-plugin.js` - Custom Docusaurus plugin for Tailwind CSS
+- **Config**: `tailwind.config.js` - Configured for Docusaurus dark mode detection using `[data-theme="dark"]`
+- **Styles**: `src/css/custom.css` - Includes Tailwind directives and custom CSS variables
+- **Dark Mode**: Full dark mode support across all custom components
+
+### Interactive Components
+- **EmailSignup**: Newsletter signup with responsive design and status feedback
+- **DietrichTipGenerator**: Animated security tip generator with smooth transitions
+- **PasswordComplexityCalculator**: Sophisticated password analyzer with:
+  - Real-time visual feedback on input strength
+  - Staggered animation sequences for results
+  - Dynamic color-coded borders and rings
+  - Button loading states with emoji feedback
+  - Checkmark reveal animations with 100ms delays
+- **SecurityMetricsDashboard**: Real-time metrics dashboard with live data updates
+
+All components feature:
+- Comprehensive dark mode support
+- Smooth animations and micro-interactions
+- Responsive design patterns
+- Accessibility considerations
 
 ## Key Features
 - Blog-only Docusaurus site (docs disabled)
@@ -74,3 +98,5 @@ Deploys to GitHub Pages (configured for user `justinkowarsch`)
 - Mermaid diagram support
 - Custom reading time calculation
 - RSS/Atom feeds enabled
+- Tailwind CSS with sophisticated animations
+- Full dark mode theme support
