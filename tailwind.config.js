@@ -5,6 +5,7 @@ module.exports = {
     "./blog/**/*.{md,mdx}",
     "./docs/**/*.{md,mdx}",
   ],
+  darkMode: ['class', '[data-theme="dark"]'], // Enable Docusaurus dark mode detection
   theme: {
     extend: {},
   },
