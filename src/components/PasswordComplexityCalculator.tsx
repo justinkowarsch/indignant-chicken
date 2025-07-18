@@ -103,7 +103,7 @@ const PasswordComplexityCalculator: React.FC = () => {
       setTimeout(() => {
         setShowResults(true);
         setIsCalculating(false);
-        
+
         // Staggered entrance animations
         setTimeout(() => setShowRating(true), 150);
         setTimeout(() => setShowAdvice(true), 300);
@@ -113,7 +113,7 @@ const PasswordComplexityCalculator: React.FC = () => {
           const checkmarkTimers = [0, 100, 200, 300, 400, 500];
           checkmarkTimers.forEach((delay, index) => {
             setTimeout(() => {
-              setShowCheckmarks(prev => {
+              setShowCheckmarks((prev) => {
                 const newState = [...prev];
                 newState[index] = true;
                 return newState;
@@ -129,13 +129,13 @@ const PasswordComplexityCalculator: React.FC = () => {
   const rating = results ? getSecurityRating(results.securityScore) : null;
 
   return (
-    <div className="border-2 border-solid border-gray-300 rounded-lg p-5 my-5 bg-gray-50">
-      <h4 className="text-gray-800 mb-5 text-center font-mono text-lg font-semibold">
+    <div className="border-2 border-solid border-gray-300 dark:border-gray-600 rounded-lg p-5 my-5 bg-gray-50 dark:bg-gray-800">
+      <h4 className="text-gray-800 dark:text-gray-100 mb-5 text-center font-mono text-lg font-semibold">
         🔐 Dietrich's Password Complexity Calculator™
       </h4>
 
       <div className="mb-5">
-        <label className="block mb-2 font-bold text-gray-800">
+        <label className="block mb-2 font-bold text-gray-800 dark:text-gray-200">
           Enter Password for Analysis:
         </label>
         <input
@@ -180,11 +180,11 @@ const PasswordComplexityCalculator: React.FC = () => {
       </div>
 
       {showResults && results && rating && (
-        <div className="bg-white border border-gray-300 rounded-lg p-5 animate-in slide-in-from-bottom-4 duration-500 fade-in">
+        <div className="bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg p-5 animate-in slide-in-from-bottom-4 duration-500 fade-in">
           <div
             className={`text-center mb-5 p-4 text-white rounded-md font-bold text-lg transition-all duration-500 ${
-              showRating 
-                ? "animate-in zoom-in-95 fade-in duration-300" 
+              showRating
+                ? "animate-in zoom-in-95 fade-in duration-300"
                 : "opacity-0 scale-95"
             }`}
             style={{ backgroundColor: rating.color }}
@@ -192,50 +192,90 @@ const PasswordComplexityCalculator: React.FC = () => {
             Security Rating: {rating.rating}
           </div>
 
-          <div className={`italic text-center mb-5 text-base text-gray-500 transition-all duration-500 ${
-            showAdvice 
-              ? "animate-in slide-in-from-left-4 fade-in duration-400" 
-              : "opacity-0 translate-x-4"
-          }`}>
+          <div
+            className={`italic text-center mb-5 text-base text-gray-500 dark:text-gray-400 transition-all duration-500 ${
+              showAdvice
+                ? "animate-in slide-in-from-left-4 fade-in duration-400"
+                : "opacity-0 translate-x-4"
+            }`}
+          >
             "{rating.advice}"
           </div>
 
-          <div className={`grid grid-cols-1 md:grid-cols-2 gap-4 transition-all duration-500 ${
-            showAnalysis 
-              ? "animate-in slide-in-from-bottom-2 fade-in duration-600" 
-              : "opacity-0 translate-y-2"
-          }`}>
+          <div
+            className={`grid grid-cols-1 md:grid-cols-2 gap-4 transition-all duration-500 ${
+              showAnalysis
+                ? "animate-in slide-in-from-bottom-2 fade-in duration-600"
+                : "opacity-0 translate-y-2"
+            }`}
+          >
             <div>
-              <h5 className="text-gray-800 mb-2.5 text-base font-semibold">
+              <h5 className="text-gray-800 dark:text-gray-200 mb-2.5 text-base font-semibold">
                 Password Analysis:
               </h5>
-              <ul className="list-none p-0 text-sm space-y-1">
-                <li className={`transition-all duration-300 ${showCheckmarks[0] ? "animate-in slide-in-from-left-2 fade-in" : "opacity-0 -translate-x-2"}`}>
+              <ul className="list-none p-0 text-sm space-y-1 text-gray-800 dark:text-gray-300">
+                <li
+                  className={`transition-all duration-300 ${
+                    showCheckmarks[0]
+                      ? "animate-in slide-in-from-left-2 fade-in"
+                      : "opacity-0 -translate-x-2"
+                  }`}
+                >
                   ✅ Length: {results.length} characters
                 </li>
-                <li className={`transition-all duration-300 ${showCheckmarks[1] ? "animate-in slide-in-from-left-2 fade-in" : "opacity-0 -translate-x-2"}`}>
+                <li
+                  className={`transition-all duration-300 ${
+                    showCheckmarks[1]
+                      ? "animate-in slide-in-from-left-2 fade-in"
+                      : "opacity-0 -translate-x-2"
+                  }`}
+                >
                   {results.hasNumbers ? "✅" : "❌"} Contains numbers
                 </li>
-                <li className={`transition-all duration-300 ${showCheckmarks[2] ? "animate-in slide-in-from-left-2 fade-in" : "opacity-0 -translate-x-2"}`}>
+                <li
+                  className={`transition-all duration-300 ${
+                    showCheckmarks[2]
+                      ? "animate-in slide-in-from-left-2 fade-in"
+                      : "opacity-0 -translate-x-2"
+                  }`}
+                >
                   {results.hasUppercase ? "✅" : "❌"} Has uppercase letters
                 </li>
-                <li className={`transition-all duration-300 ${showCheckmarks[3] ? "animate-in slide-in-from-left-2 fade-in" : "opacity-0 -translate-x-2"}`}>
+                <li
+                  className={`transition-all duration-300 ${
+                    showCheckmarks[3]
+                      ? "animate-in slide-in-from-left-2 fade-in"
+                      : "opacity-0 -translate-x-2"
+                  }`}
+                >
                   {results.hasLowercase ? "✅" : "❌"} Has lowercase letters
                 </li>
-                <li className={`transition-all duration-300 ${showCheckmarks[4] ? "animate-in slide-in-from-left-2 fade-in" : "opacity-0 -translate-x-2"}`}>
+                <li
+                  className={`transition-all duration-300 ${
+                    showCheckmarks[4]
+                      ? "animate-in slide-in-from-left-2 fade-in"
+                      : "opacity-0 -translate-x-2"
+                  }`}
+                >
                   {results.hasSpecialChars ? "✅" : "❌"} Special characters
                 </li>
-                <li className={`transition-all duration-300 ${showCheckmarks[5] ? "animate-in slide-in-from-left-2 fade-in" : "opacity-0 -translate-x-2"}`}>
+                <li
+                  className={`transition-all duration-300 ${
+                    showCheckmarks[5]
+                      ? "animate-in slide-in-from-left-2 fade-in"
+                      : "opacity-0 -translate-x-2"
+                  }`}
+                >
                   {results.hasEmoji ? "✅" : "❌"} Contains emoji (bonus!)
                 </li>
               </ul>
             </div>
 
             <div>
-              <h5 className="text-gray-800 mb-2.5 text-base font-semibold">
+              <h5 className="text-gray-800 dark:text-gray-200 mb-2.5 text-base font-semibold">
                 Dietrich's Metrics:
               </h5>
-              <div className="text-sm space-y-1">
+              <div className="text-sm space-y-1 text-gray-800 dark:text-gray-300">
                 <div>
                   <strong>Complexity Factor:</strong> {results.complexityFactor}
                 </div>
@@ -249,7 +289,7 @@ const PasswordComplexityCalculator: React.FC = () => {
             </div>
           </div>
 
-          <div className="mt-4 p-2.5 bg-gray-50 rounded text-xs text-gray-500 text-center">
+          <div className="mt-4 p-2.5 bg-gray-50 dark:bg-gray-600 rounded text-xs text-gray-500 dark:text-gray-400 text-center">
             Formula: Security = (Length × Complexity) ÷ (User Happiness²) × 100
           </div>
         </div>
