@@ -91,6 +91,28 @@ All components feature:
 - Responsive design patterns
 - Accessibility considerations
 
+## Troubleshooting
+
+### Windows Development Environment
+When working in Git Bash on Windows, some commands require specific syntax:
+
+#### Finding and Killing Dev Server
+```bash
+# Find process using port 3000
+netstat -ano | findstr :3000
+
+# Kill process by PID (use double slashes in Git Bash)
+taskkill //PID <process_id> //F
+```
+
+#### Process Management
+```bash
+# List Node.js processes (if needed)
+wmic process where "name='node.exe'" get processid,commandline
+```
+
+**Note**: Standard Unix-style commands like `taskkill /PID` will fail in Git Bash due to path interpretation. Always use `//` instead of `/` for Windows command flags.
+
 ## Key Features
 - Blog-only Docusaurus site (docs disabled)
 - Custom rating system with React Context
