@@ -19,11 +19,27 @@ npm run start
 ```
 Starts development server with hot reload at http://localhost:3000
 
-### Build
+### Build Commands
+
+#### Full Production Build (with PDFs)
 ```bash
 npm run build
 ```
-Generates static content into the `build` directory
+Generates PDFs first, then builds the site. Use for deployment and when PDF content has changed.
+
+#### Fast Development Build (no PDFs)
+```bash
+npm run build:fast
+```
+Builds site only, skipping PDF generation. Use for quick builds when only blog content has changed.
+
+#### PDF Generation Only
+```bash
+npm run build:pdf-only
+# or
+npm run generate-pdfs
+```
+Generates PDFs without building the site. Use when updating PDF content only.
 
 ### TypeScript Type Checking
 ```bash
@@ -41,7 +57,9 @@ Creates a new field note blog post using the custom generator script
 ```bash
 npm run deploy
 ```
-Deploys to GitHub Pages (configured for user `justinkowarsch`)
+Runs full build with PDF generation, then deploys to GitHub Pages. 
+
+**Important**: Always use `npm run deploy` (not `docusaurus deploy` directly) to ensure PDFs are generated before deployment.
 
 ## Architecture
 
@@ -74,6 +92,39 @@ Deploys to GitHub Pages (configured for user `justinkowarsch`)
 - **Styles**: `src/css/custom.css` - Includes Tailwind directives and custom CSS variables
 - **Dark Mode**: Full dark mode support across all custom components
 
+### PDF Document System
+- **PDF Generation**: `@react-pdf/renderer` with build-time generation
+  - Corporate document templates with authentic styling
+  - Build script: `scripts/generatePdfs.js` - Flexible, data-driven PDF generation
+  - Structured data files: `src/data/*.js` (e.g., `pifProcedureData.js`)
+  - Configuration-based: Add new PDFs by updating `pdfConfigs` array
+  - Integration: `npm run generate-pdfs && docusaurus build`
+- **PDF Viewer**: `src/components/PdfViewer.tsx` - Custom viewer with `react-pdf`
+  - Advanced zoom controls (50% to 300% range)
+  - Default 125% scale for optimal readability
+  - High z-index layering (`z-50`) for proper overlay behavior
+  - Navigation controls for multi-page documents
+  - Download functionality with professional styling
+- **Content Strategy**: "Leaked document" approach
+  - Blog posts focus on investigative narrative and commentary
+  - All detailed procedure mechanics contained in generated PDFs
+  - Enhanced shareability through official-looking document formatting
+
+#### Adding New Leaked Documents
+1. Create data file: `src/data/newDocumentData.js` with structured content
+2. Add configuration to `scripts/generatePdfs.js` in `pdfConfigs` array:
+   ```javascript
+   {
+     data: require('../src/data/newDocumentData.js').newDocumentData,
+     filename: 'new-leaked-document.pdf',
+     description: 'New Leaked Document'
+   }
+   ```
+3. Run `npm run generate-pdfs` to build new PDF
+4. Reference in blog post: `<PdfViewer pdfUrl="/pdf/new-leaked-document.pdf" />`
+
+**⚠️ Deployment Warning**: Always use `npm run deploy` (not `docusaurus deploy`) to ensure PDFs are included in deployment.
+
 ### Interactive Components
 - **EmailSignup**: Newsletter signup with responsive design and status feedback
 - **DietrichTipGenerator**: Animated security tip generator with smooth transitions
@@ -84,6 +135,11 @@ Deploys to GitHub Pages (configured for user `justinkowarsch`)
   - Button loading states with emoji feedback
   - Checkmark reveal animations with 100ms delays
 - **SecurityMetricsDashboard**: Real-time metrics dashboard with live data updates
+- **PdfViewer**: Professional PDF viewing component with:
+  - Zoom controls with intuitive 125% default
+  - Proper z-index layering for overlay behavior
+  - Mobile-responsive design with scroll handling
+  - Integration with build-time PDF generation
 
 All components feature:
 - Comprehensive dark mode support
@@ -113,6 +169,13 @@ wmic process where "name='node.exe'" get processid,commandline
 
 **Note**: Standard Unix-style commands like `taskkill /PID` will fail in Git Bash due to path interpretation. Always use `//` instead of `/` for Windows command flags.
 
+#### Deployment
+The deploy script uses Unix-style environment variables that work directly in Git Bash:
+```bash
+GIT_USER=justinkowarsch npx docusaurus deploy --skip-build
+```
+No additional environment variable packages are needed.
+
 ## Key Features
 - Blog-only Docusaurus site (docs disabled)
 - Custom rating system with React Context
@@ -122,3 +185,5 @@ wmic process where "name='node.exe'" get processid,commandline
 - RSS/Atom feeds enabled
 - Tailwind CSS with sophisticated animations
 - Full dark mode theme support
+- **PDF Document System**: Build-time PDF generation with embedded viewer
+- **"Leaked Document" Content Strategy**: Official-looking PDFs for enhanced shareability
