@@ -93,6 +93,11 @@ const config: Config = {
   plugins: ["./src/plugins/tailwind-plugin.js"],
   themeConfig: {
     image: "img/sludge-social-card.png",
+    colorMode: {
+      defaultMode: "light",
+      disableSwitch: true,
+      respectPrefersColorScheme: true,
+    },
     navbar: {
       title: "theSludge.report",
       logo: {

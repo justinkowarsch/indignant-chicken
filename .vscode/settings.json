@@ -1,4 +1,11 @@
 {
   "postman.settings.dotenv-detection-notification-visibility": false,
-  "cSpell.words": ["buymeacoffee", "ernestsludge", "fieldnote", "fieldnotes"]
+  "cSpell.words": [
+    "buymeacoffee",
+    "cfasync",
+    "ernestsludge",
+    "fieldnote",
+    "fieldnotes",
+    "Katex"
+  ]
 }
