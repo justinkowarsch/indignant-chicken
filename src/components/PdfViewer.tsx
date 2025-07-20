@@ -25,9 +25,32 @@ const PdfViewer: React.FC<PdfViewerProps> = ({
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [zoom, setZoom] = useState<ZoomState>({ scale: 1.25 }); // Start with 125% for better readability
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [zoom, setZoom] = useState<ZoomState>({ scale: 1.25 }); // Will be adjusted based on screen size
   const [isClient, setIsClient] = useState<boolean>(false);
   const [pdfLibsLoaded, setPdfLibsLoaded] = useState<boolean>(false);
+
+  // Detect mobile screen size and set optimal zoom
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768); // Tailwind md breakpoint
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // Set optimal zoom based on screen size
+  useEffect(() => {
+    if (isClient) {
+      const optimalScale = isMobile ? 0.5 : 1.25;
+      setZoom({ scale: optimalScale });
+    }
+  }, [isMobile, isClient]);
+
+  // Get optimal scale for current screen
+  const getOptimalScale = () => (isMobile ? 0.5 : 1.25);
 
   // Load PDF libraries only on client side
   useEffect(() => {
@@ -91,12 +114,8 @@ const PdfViewer: React.FC<PdfViewerProps> = ({
     setZoom((prev) => ({ scale: Math.max(prev.scale - 0.25, 0.5) }));
   }
 
-  function resetZoom() {
-    setZoom({ scale: 1.25 }); // Reset to the same default as initial load
-  }
-
-  function fitToWidth() {
-    setZoom({ width: undefined, scale: 1.25 }); // Our "real 100%" for optimal readability
+  function resetToOptimal() {
+    setZoom({ scale: getOptimalScale() }); // Reset to optimal scale based on screen size
   }
 
   // Show loading state during SSR and until PDF libraries are loaded
@@ -113,7 +132,7 @@ const PdfViewer: React.FC<PdfViewerProps> = ({
             download
             className="inline-flex items-center px-3 py-1 text-sm bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors duration-200"
           >
-            ⬇️ Download PDF
+            {isMobile ? "Download" : "⬇️ Download PDF"}
           </a>
         </div>
 
@@ -145,7 +164,7 @@ const PdfViewer: React.FC<PdfViewerProps> = ({
           download
           className="inline-flex items-center px-3 py-1 text-sm bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors duration-200"
         >
-          ⬇️ Download PDF
+          {isMobile ? "Download" : "⬇️ Download PDF"}
         </a>
       </div>
 
@@ -182,7 +201,7 @@ const PdfViewer: React.FC<PdfViewerProps> = ({
                   : "bg-gray-600 text-white hover:bg-gray-700 dark:bg-gray-600 dark:hover:bg-gray-500"
               }`}
             >
-              🔍−
+              {isMobile ? "−" : "🔍−"}
             </button>
 
             <span className="text-sm text-gray-600 dark:text-gray-400 min-w-[60px] text-center">
@@ -198,21 +217,14 @@ const PdfViewer: React.FC<PdfViewerProps> = ({
                   : "bg-gray-600 text-white hover:bg-gray-700 dark:bg-gray-600 dark:hover:bg-gray-500"
               }`}
             >
-              🔍+
+              {isMobile ? "+" : "🔍+"}
             </button>
 
             <button
-              onClick={resetZoom}
-              className="px-2 py-1 text-sm bg-gray-600 text-white rounded hover:bg-gray-700 dark:bg-gray-600 dark:hover:bg-gray-500 transition-colors"
-            >
-              Reset
-            </button>
-
-            <button
-              onClick={fitToWidth}
+              onClick={resetToOptimal}
               className="px-2 py-1 text-sm bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
             >
-              Fit Width
+              Optimal ({Math.round(getOptimalScale() * 100)}%)
             </button>
           </div>
         )}
@@ -247,13 +259,15 @@ const PdfViewer: React.FC<PdfViewerProps> = ({
             <button
               onClick={goToPrevPage}
               disabled={pageNumber <= 1}
-              className={`flex items-center px-3 py-2 rounded text-sm transition-colors duration-200 ${
+              className={`flex items-center ${
+                isMobile ? "px-2" : "px-3"
+              } py-2 rounded text-sm transition-colors duration-200 ${
                 pageNumber <= 1
                   ? "bg-gray-200 text-gray-500 cursor-not-allowed dark:bg-gray-700 dark:text-gray-500"
                   : "bg-gray-600 text-white hover:bg-gray-700 dark:bg-gray-600 dark:hover:bg-gray-500"
               }`}
             >
-              ← Previous
+              {isMobile ? "←" : "← Previous"}
             </button>
 
             <div className="flex items-center space-x-2">
@@ -265,13 +279,15 @@ const PdfViewer: React.FC<PdfViewerProps> = ({
             <button
               onClick={goToNextPage}
               disabled={pageNumber >= numPages}
-              className={`flex items-center px-3 py-2 rounded text-sm transition-colors duration-200 ${
+              className={`flex items-center ${
+                isMobile ? "px-2" : "px-3"
+              } py-2 rounded text-sm transition-colors duration-200 ${
                 pageNumber >= numPages
                   ? "bg-gray-200 text-gray-500 cursor-not-allowed dark:bg-gray-700 dark:text-gray-500"
                   : "bg-gray-600 text-white hover:bg-gray-700 dark:bg-gray-600 dark:hover:bg-gray-500"
               }`}
             >
-              Next →
+              {isMobile ? "→" : "Next →"}
             </button>
           </div>
         )}
