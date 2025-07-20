@@ -22,7 +22,7 @@ const pdfConfigs = [
 ];
 
 // Inline PDF component (Node.js compatible)
-const { Document, Page, Text, View, StyleSheet } = require('@react-pdf/renderer');
+const { Document, Page, Text, View, StyleSheet, Link } = require('@react-pdf/renderer');
 
 const styles = StyleSheet.create({
   page: {
@@ -148,8 +148,9 @@ function createPdfDocument(data) {
         }, data.disclaimer || 'This document does not officially exist.')
       ),
 
-      // Fixed footer - site address only (page numbers seem broken)
-      React.createElement(Text, {
+      // Fixed footer with clickable link
+      React.createElement(Link, {
+        src: 'https://thesludge.report',
         style: {
           position: 'absolute',
           fontSize: 8,
@@ -157,7 +158,8 @@ function createPdfDocument(data) {
           left: 40,
           right: 40,
           textAlign: 'center',
-          color: '#888888'
+          color: '#0066cc',
+          textDecoration: 'underline'
         },
         fixed: true
       }, 'theSludge.report')
