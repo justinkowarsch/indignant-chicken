@@ -71,7 +71,7 @@ Creates new blog posts using the custom generator script:
 - **Field Notes** (`fn`): Simple posts in `/blog/field_notes/` with minimal frontmatter
 - **Case Studies** (`cs`): Full-featured posts in `/blog/case_studies/` with:
   - Complete scaffold structure (Setup, Problem, Plot Thickens, Resolution, Takeaways)
-  - Required component imports (RatingSelector, RatingSwitcher, LegalNoticeDisclaimer)  
+  - Required component imports (RatingSelector, RatingSwitcher, LegalNoticeDisclaimer)
   - Warning sections and contextual info boxes
   - Footnotes and legal disclaimer sections
   - `draft: true` by default for safe editing
@@ -153,7 +153,8 @@ Runs full build with PDF generation, then deploys to GitHub Pages.
 3. Reference in blog post: `<PdfViewer pdfUrl="/pdf/new-document.pdf" />`
 
 **Auto-Discovery Features:**
-- **Zero configuration**: Just drop `.js` files in `/src/data/` 
+
+- **Zero configuration**: Just drop `.js` files in `/src/data/`
 - **Smart naming**: `newDocumentData.js` → `new-document.pdf`
 - **Performance**: Hash-based change detection (only regenerates modified content)
 - **Scalable**: Handles 1 or 100 PDFs efficiently
