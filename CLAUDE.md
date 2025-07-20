@@ -158,7 +158,7 @@ The PDF generation system includes automatic footer branding:
 
 - **Site Address Footer**: Each generated PDF includes "theSludge.report" centered at the bottom of every page
 - **Implementation**: Uses `fixed: true` positioning in `@react-pdf/renderer` for reliable cross-page footer placement
-- **Known Limitations**: 
+- **Known Limitations**:
   - Page numbering with `render` prop is unreliable in Node.js build context
   - Only static text footers work consistently
   - Footer appears separately from disclaimer text (which flows with document content)
