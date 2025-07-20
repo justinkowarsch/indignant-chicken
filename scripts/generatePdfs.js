@@ -141,9 +141,26 @@ function createPdfDocument(data) {
         )
       ),
       
-      React.createElement(Text, { style: styles.footer },
-        data.disclaimer || 'This document does not officially exist. Do not cite it in meetings. Brenda will deny it.'
-      )
+      // Footer section (in document flow)
+      React.createElement(View, { style: { marginTop: 30, paddingTop: 15, borderTop: '1px solid #dee2e6' } },
+        React.createElement(Text, { 
+          style: { fontSize: 8, textAlign: 'center', color: '#888888' }
+        }, data.disclaimer || 'This document does not officially exist.')
+      ),
+
+      // Fixed footer - site address only (page numbers seem broken)
+      React.createElement(Text, {
+        style: {
+          position: 'absolute',
+          fontSize: 8,
+          bottom: 20,
+          left: 40,
+          right: 40,
+          textAlign: 'center',
+          color: '#888888'
+        },
+        fixed: true
+      }, 'theSludge.report')
     )
   );
 }

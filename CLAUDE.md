@@ -151,6 +151,18 @@ Runs full build with PDF generation, then deploys to GitHub Pages.
 
 **⚠️ Deployment Warning**: Always use `npm run deploy` (not `docusaurus deploy`) to ensure PDFs are included in deployment.
 
+#### PDF Footer Implementation Notes
+
+The PDF generation system includes automatic footer branding:
+
+- **Site Address Footer**: Each generated PDF includes "theSludge.report" centered at the bottom of every page
+- **Implementation**: Uses `fixed: true` positioning in `@react-pdf/renderer` for reliable cross-page footer placement
+- **Known Limitations**: 
+  - Page numbering with `render` prop is unreliable in Node.js build context
+  - Only static text footers work consistently
+  - Footer appears separately from disclaimer text (which flows with document content)
+- **Location**: Footer logic implemented in `scripts/generatePdfs.js` (not in `/src/utils/` - that path is unused)
+
 ### Interactive Components
 
 - **EmailSignup**: Newsletter signup with responsive design and status feedback
