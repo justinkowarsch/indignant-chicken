@@ -61,10 +61,20 @@ Runs TypeScript compiler to check for type errors
 ### Content Generation
 
 ```bash
-npm run tsr g fn "Post Title"
+npm run tsr g fn "Post Title"    # Creates field note
+npm run tsr g cs "Study Title"   # Creates case study
+npm run tsr help                 # Show generator help
 ```
 
-Creates a new field note blog post using the custom generator script
+Creates new blog posts using the custom generator script:
+
+- **Field Notes** (`fn`): Simple posts in `/blog/field_notes/` with minimal frontmatter
+- **Case Studies** (`cs`): Full-featured posts in `/blog/case_studies/` with:
+  - Complete scaffold structure (Setup, Problem, Plot Thickens, Resolution, Takeaways)
+  - Required component imports (RatingSelector, RatingSwitcher, LegalNoticeDisclaimer)  
+  - Warning sections and contextual info boxes
+  - Footnotes and legal disclaimer sections
+  - `draft: true` by default for safe editing
 
 ### Deployment
 
