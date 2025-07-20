@@ -2,24 +2,69 @@ const React = require('react');
 const { renderToBuffer } = require('@react-pdf/renderer');
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
-// Import PDF data from data files
-const { pifProcedureData } = require('../src/data/pifProcedureData.js');
-
-// Configuration for which PDFs to generate
-const pdfConfigs = [
-  {
-    data: pifProcedureData,
-    filename: 'official-unofficial-pif-procedure.pdf',
-    description: 'Official Unofficial PIF Procedure'
+// Auto-discover PDF data files
+function discoverPdfConfigs() {
+  const dataDir = path.join(__dirname, '../src/data');
+  const configs = [];
+  
+  if (!fs.existsSync(dataDir)) {
+    console.log('📁 No data directory found');
+    return configs;
   }
-  // Add more PDFs here as needed:
-  // {
-  //   data: require('../src/data/anotherProcedure.js').anotherProcedureData,
-  //   filename: 'another-leaked-document.pdf', 
-  //   description: 'Another Leaked Document'
-  // }
-];
+  
+  const files = fs.readdirSync(dataDir).filter(file => 
+    file.endsWith('.js') && !file.startsWith('_') // Skip files starting with _
+  );
+  
+  for (const file of files) {
+    try {
+      const filePath = path.join(dataDir, file);
+      const dataModule = require(filePath);
+      
+      // Get the first exported data object (should be named like xxxData)
+      const dataExport = Object.values(dataModule).find(exp => 
+        typeof exp === 'object' && exp !== null && !Array.isArray(exp)
+      );
+      
+      if (dataExport && dataExport.title) {
+        const baseName = file.replace('.js', '');
+        
+        // Convert camelCase to kebab-case for filename
+        const kebabName = baseName
+          .replace(/Data$/, '') // Remove "Data" suffix
+          .replace(/([A-Z])/g, '-$1') // Add dash before capital letters
+          .toLowerCase()
+          .replace(/^-/, ''); // Remove leading dash
+        
+        const pdfFilename = `${kebabName}.pdf`;
+        
+        // Generate friendly description
+        const description = baseName
+          .replace(/Data$/, '') // Remove "Data" suffix
+          .replace(/([A-Z])/g, ' $1') // Add space before capital letters
+          .replace(/^./, str => str.toUpperCase()) // Capitalize first letter
+          .trim();
+        
+        configs.push({
+          data: dataExport,
+          filename: pdfFilename,
+          description: description
+        });
+        
+        console.log(`📋 Discovered: ${description} -> ${pdfFilename}`);
+      }
+    } catch (error) {
+      console.warn(`⚠️  Skipping ${file}: ${error.message}`);
+    }
+  }
+  
+  return configs;
+}
+
+// Auto-generate PDF configurations
+const pdfConfigs = discoverPdfConfigs();
 
 // Inline PDF component (Node.js compatible)
 const { Document, Page, Text, View, StyleSheet, Link } = require('@react-pdf/renderer');
@@ -167,8 +212,27 @@ function createPdfDocument(data) {
   );
 }
 
+// Helper function to create content hash
+function createContentHash(data) {
+  return crypto.createHash('sha256').update(JSON.stringify(data)).digest('hex');
+}
+
+// Load/save hash cache
+function loadHashCache() {
+  const hashFile = path.join(__dirname, '../.pdf-hashes.json');
+  if (fs.existsSync(hashFile)) {
+    return JSON.parse(fs.readFileSync(hashFile, 'utf8'));
+  }
+  return {};
+}
+
+function saveHashCache(hashes) {
+  const hashFile = path.join(__dirname, '../.pdf-hashes.json');
+  fs.writeFileSync(hashFile, JSON.stringify(hashes, null, 2));
+}
+
 async function generatePdfs() {
-  console.log('🔄 Generating PDFs...');
+  console.log('🔄 Checking PDFs for changes...');
   
   try {
     // Ensure the static/pdf directory exists
@@ -178,18 +242,42 @@ async function generatePdfs() {
       console.log('📁 Created pdf directory');
     }
 
-    // Generate each configured PDF
+    // Load existing hashes
+    const hashCache = loadHashCache();
+    const newHashes = {};
+    let generatedCount = 0;
+    let skippedCount = 0;
+
+    // Check each configured PDF
     for (const config of pdfConfigs) {
+      const contentHash = createContentHash(config.data);
+      const pdfPath = path.join(pdfDir, config.filename);
+      const cacheKey = config.filename;
+      
+      newHashes[cacheKey] = contentHash;
+      
+      // Skip if content hasn't changed and file exists
+      if (hashCache[cacheKey] === contentHash && fs.existsSync(pdfPath)) {
+        console.log(`⏭️  Skipping ${config.description} (no changes)`);
+        skippedCount++;
+        continue;
+      }
+
       console.log(`📄 Generating ${config.description}...`);
       const pdfDocument = createPdfDocument(config.data);
       const pdfBuffer = await renderToBuffer(pdfDocument);
       
-      const pdfPath = path.join(pdfDir, config.filename);
       fs.writeFileSync(pdfPath, pdfBuffer);
       
       console.log(`✅ ${config.description} generated: ${pdfPath}`);
       console.log(`📊 PDF size: ${(pdfBuffer.length / 1024).toFixed(2)} KB`);
+      generatedCount++;
     }
+
+    // Save updated hashes
+    saveHashCache(newHashes);
+    
+    console.log(`🎉 PDF generation complete! Generated: ${generatedCount}, Skipped: ${skippedCount}`);
     
   } catch (error) {
     console.error('❌ Error generating PDFs:', error);

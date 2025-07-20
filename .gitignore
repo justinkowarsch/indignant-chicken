@@ -7,6 +7,7 @@
 # Generated files
 .docusaurus
 .cache-loader
+.pdf-hashes.json
 
 # Misc
 .DS_Store

@@ -146,19 +146,19 @@ Runs full build with PDF generation, then deploys to GitHub Pages.
 
 #### Adding New Leaked Documents
 
+**Fully Automated Process:**
+
 1. Create data file: `src/data/newDocumentData.js` with structured content
-2. Add configuration to `scripts/generatePdfs.js` in `pdfConfigs` array:
+2. Run `npm run generate-pdfs` - PDF auto-discovered and generated!
+3. Reference in blog post: `<PdfViewer pdfUrl="/pdf/new-document.pdf" />`
 
-   ```javascript
-   {
-     data: require('../src/data/newDocumentData.js').newDocumentData,
-     filename: 'new-leaked-document.pdf',
-     description: 'New Leaked Document'
-   }
-   ```
-
-3. Run `npm run generate-pdfs` to build new PDF
-4. Reference in blog post: `<PdfViewer pdfUrl="/pdf/new-leaked-document.pdf" />`
+**Auto-Discovery Features:**
+- **Zero configuration**: Just drop `.js` files in `/src/data/` 
+- **Smart naming**: `newDocumentData.js` → `new-document.pdf`
+- **Performance**: Hash-based change detection (only regenerates modified content)
+- **Scalable**: Handles 1 or 100 PDFs efficiently
+- **Error handling**: Gracefully skips malformed files
+- **Helper files**: Files starting with `_` are ignored (for utilities)
 
 **⚠️ Deployment Warning**: Always use `npm run deploy` (not `docusaurus deploy`) to ensure PDFs are included in deployment.
 
