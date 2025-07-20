@@ -124,7 +124,8 @@ Runs full build with PDF generation, then deploys to GitHub Pages.
   - Integration: `npm run generate-pdfs && docusaurus build`
 - **PDF Viewer**: `src/components/PdfViewer.tsx` - Custom viewer with `react-pdf`
   - Advanced zoom controls (50% to 300% range)
-  - Default 125% scale for optimal readability
+  - Responsive default scaling: 50% mobile, 125% desktop
+  - Mobile-optimized controls (emoji-free, compact buttons)
   - High z-index layering (`z-50`) for proper overlay behavior
   - Navigation controls for multi-page documents
   - Download functionality with professional styling
@@ -175,9 +176,10 @@ The PDF generation system includes automatic footer branding:
   - Checkmark reveal animations with 100ms delays
 - **SecurityMetricsDashboard**: Real-time metrics dashboard with live data updates
 - **PdfViewer**: Professional PDF viewing component with:
-  - Zoom controls with intuitive 125% default
+  - Responsive zoom defaults (50% mobile, 125% desktop)
+  - Mobile-optimized interface (compact, emoji-free controls)
   - Proper z-index layering for overlay behavior
-  - Mobile-responsive design with scroll handling
+  - Cross-device responsive design with scroll handling
   - Integration with build-time PDF generation
 
 All components feature:
