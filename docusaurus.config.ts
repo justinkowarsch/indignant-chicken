@@ -126,6 +126,15 @@ const config: Config = {
             },
           ],
         },
+        {
+          title: "Legal",
+          items: [
+            {
+              label: "Privacy Policy",
+              to: "/privacy",
+            },
+          ],
+        },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Ernest Sludge.`,
     },
