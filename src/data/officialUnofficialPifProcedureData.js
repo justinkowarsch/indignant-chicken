@@ -1,5 +1,5 @@
 // Structured data for the Official Unofficial PIF Procedure
-const pifProcedureData = {
+const officialUnofficialPifProcedureData = {
   title:
     "Official Unofficial Procedure for Complying With the Official Project Initiation Procedure",
   documentId: "PIF-PROC-2025-093B",
@@ -130,4 +130,4 @@ const pifProcedureData = {
 };
 
 // Export for CommonJS (Node.js script)
-module.exports = { pifProcedureData };
+module.exports = { officialUnofficialPifProcedureData };
