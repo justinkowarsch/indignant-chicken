@@ -90,7 +90,16 @@ const config: Config = {
       crossorigin: "anonymous",
     },
   ],
-  plugins: ["./src/plugins/tailwind-plugin.js"],
+  plugins: [
+    "./src/plugins/tailwind-plugin.js",
+    [
+      '@docusaurus/plugin-google-gtag',
+      {
+        trackingID: 'G-F1KHRG5529',
+        anonymizeIP: true,
+      },
+    ],
+  ],
   themeConfig: {
     image: "img/sludge-social-card.png",
     colorMode: {
