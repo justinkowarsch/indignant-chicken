@@ -237,3 +237,53 @@ wmic process where "name='node.exe'" get processid,commandline
 - Full dark mode theme support
 - **PDF Document System**: Build-time PDF generation with embedded viewer
 - **"Leaked Document" Content Strategy**: Official-looking PDFs for enhanced shareability
+
+## Security Vulnerabilities
+
+⚠️ **CRITICAL SECURITY ISSUES IDENTIFIED** - This blog has multiple attack vectors that could allow malicious actors to modify content and "put words in the author's mouth":
+
+### Repository Access Control
+
+- **No branch protection rules** on main branch - allows direct commits without review
+- **Embedded deployment credentials** in package.json scripts (`GIT_USER=justinkowarsch`)
+- **Public repository** with potential for unauthorized access
+
+### Content Generation Vulnerabilities
+
+- **Command injection risk** in `generate.js` - user input processed without proper sanitization
+- **Path traversal vulnerability** - file paths constructed using unsanitized input
+- **Template injection** - content templates include unvalidated user input
+
+### PDF Generation System Exploits
+
+- **Dynamic code execution** - auto-discovery mechanism executes any `.js` file in `/src/data/`
+- **Malicious module loading** - `require()` calls on user-controlled file paths
+- **Build-time backdoors** - malicious code could execute during PDF generation
+
+### Content Integrity Issues
+
+- **No content signing** - blog posts stored as plain files without integrity verification
+- **Direct file modification** - attackers with file system access can modify posts without Git history
+- **No input validation** - content generation scripts lack proper input sanitization
+
+### Dependency Vulnerabilities
+
+- **17+ moderate vulnerabilities** in webpack-dev-server and related packages
+- **HTTP header manipulation** vulnerabilities in on-headers dependency
+- **Source code theft** vulnerabilities in development dependencies
+
+### Deployment Pipeline Risks
+
+- **Build process manipulation** - malicious code could modify content during build
+- **Credential exposure** - deployment scripts contain hardcoded usernames
+- **No build verification** - no integrity checks on generated content
+
+### Immediate Security Recommendations
+
+1. **Implement branch protection rules** requiring pull request reviews
+2. **Add content signing/hashing** for blog post integrity verification
+3. **Sanitize all user inputs** in content generation scripts
+4. **Sandbox PDF generation process** to prevent code execution
+5. **Update vulnerable dependencies** to latest secure versions
+6. **Remove embedded credentials** from deployment scripts
+7. **Add Git pre-commit hooks** for security validation
