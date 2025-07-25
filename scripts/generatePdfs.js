@@ -114,6 +114,104 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#888888',
   },
+  // Table styles
+  table: {
+    width: '100%',
+    marginTop: 10,
+    marginBottom: 10,
+  },
+  tableHeader: {
+    display: 'flex',
+    flexDirection: 'row',
+    backgroundColor: '#f8f9fa',
+    borderBottom: '2px solid #1f4e79',
+    paddingTop: 8,
+    paddingBottom: 8,
+    paddingLeft: 8,
+    paddingRight: 8,
+  },
+  tableRow: {
+    display: 'flex',
+    flexDirection: 'row',
+    borderBottom: '1px solid #dee2e6',
+    paddingTop: 6,
+    paddingBottom: 6,
+    paddingLeft: 8,
+    paddingRight: 8,
+  },
+  tableRowEven: {
+    backgroundColor: '#f8f9fa',
+  },
+  tableCol1: { 
+    width: '35%',
+    fontSize: 8,
+    fontWeight: 'bold',
+    paddingRight: 8,
+  },
+  tableCol2: { 
+    width: '35%',
+    fontSize: 8,
+    fontStyle: 'italic',
+    paddingRight: 8,
+    color: '#666666',
+  },
+  tableCol3: { 
+    width: '30%',
+    fontSize: 8,
+    color: '#1f4e79',
+    fontWeight: 'bold',
+  },
+  tableHeaderCol1: { 
+    width: '35%',
+    fontSize: 9,
+    fontWeight: 'bold',
+    paddingRight: 8,
+    color: '#1f4e79',
+  },
+  tableHeaderCol2: { 
+    width: '35%',
+    fontSize: 9,
+    fontWeight: 'bold',
+    paddingRight: 8,
+    color: '#1f4e79',
+  },
+  tableHeaderCol3: { 
+    width: '30%',
+    fontSize: 9,
+    fontWeight: 'bold',
+    color: '#1f4e79',
+  },
+  // Leak stamp styles
+  leakStamp: {
+    position: 'absolute',
+    bottom: 40,
+    right: 50,
+    backgroundColor: 'rgba(220, 53, 69, 0.1)',
+    border: '3px solid #dc3545',
+    borderRadius: 8,
+    padding: 8,
+    transform: 'rotate(-15deg)',
+    width: 150,
+    height: 60,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    opacity: 0.7,
+  },
+  stampText1: {
+    fontSize: 12,
+    fontWeight: 'bold',
+    color: '#dc3545',
+    textAlign: 'center',
+    marginBottom: 2,
+  },
+  stampText2: {
+    fontSize: 10,
+    fontWeight: 'bold',
+    color: '#dc3545',
+    textAlign: 'center',
+  },
 });
 
 function createPdfDocument(data) {
@@ -151,9 +249,31 @@ function createPdfDocument(data) {
             React.createElement(Text, { key: stepIndex, style: { fontSize: 9, marginBottom: 3, marginLeft: 15 } }, `• ${step}`)
           ),
           
-          // Bullet points
-          section.bulletPoints && section.bulletPoints.map((point, pointIndex) =>
+          // Bullet points (legacy)
+          section.bulletPoints && !section.jargonTable && section.bulletPoints.map((point, pointIndex) =>
             React.createElement(Text, { key: pointIndex, style: { fontSize: 9, marginBottom: 3, marginLeft: 15 } }, `- ${point}`)
+          ),
+          
+          // Jargon table
+          section.jargonTable && React.createElement(View, { style: styles.table },
+            // Table header
+            React.createElement(View, { style: styles.tableHeader },
+              React.createElement(Text, { style: styles.tableHeaderCol1 }, 'Corporate Jargon'),
+              React.createElement(Text, { style: styles.tableHeaderCol2 }, 'Translation'),
+              React.createElement(Text, { style: styles.tableHeaderCol3 }, 'Plain English')
+            ),
+            // Table rows
+            ...section.jargonTable.map((row, rowIndex) =>
+              React.createElement(View, { 
+                key: rowIndex, 
+                style: [styles.tableRow, rowIndex % 2 === 1 ? styles.tableRowEven : {}],
+                wrap: false
+              },
+                React.createElement(Text, { style: styles.tableCol1 }, row.jargon || ''),
+                React.createElement(Text, { style: styles.tableCol2 }, row.translation || ''),
+                React.createElement(Text, { style: styles.tableCol3 }, row.plainEnglish || '')
+              )
+            )
           ),
           
           // Warning
@@ -193,21 +313,14 @@ function createPdfDocument(data) {
         }, data.disclaimer || 'This document does not officially exist.')
       ),
 
-      // Fixed footer with clickable link
-      React.createElement(Link, {
-        src: 'https://thesludge.report',
-        style: {
-          position: 'absolute',
-          fontSize: 8,
-          bottom: 20,
-          left: 40,
-          right: 40,
-          textAlign: 'center',
-          color: '#0066cc',
-          textDecoration: 'underline'
-        },
+      // Leak stamp (like it was stamped on the document)
+      React.createElement(View, {
+        style: styles.leakStamp,
         fixed: true
-      }, 'theSludge.report')
+      },
+        React.createElement(Text, { style: styles.stampText1 }, 'LEAKED TO'),
+        React.createElement(Text, { style: styles.stampText2 }, 'theSludge.report')
+      )
     )
   );
 }

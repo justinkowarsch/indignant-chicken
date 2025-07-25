@@ -201,7 +201,7 @@ const PdfViewer: React.FC<PdfViewerProps> = ({
                   : "bg-gray-600 text-white hover:bg-gray-700 dark:bg-gray-600 dark:hover:bg-gray-500"
               }`}
             >
-              {isMobile ? "−" : "🔍−"}
+              {isMobile ? "-" : "🔍−"}
             </button>
 
             <span className="text-sm text-gray-600 dark:text-gray-400 min-w-[60px] text-center">
