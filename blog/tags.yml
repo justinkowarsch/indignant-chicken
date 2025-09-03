@@ -34,3 +34,19 @@ people:
   label: People
   permalink: /people
   description: People
+ai-diary:
+  label: AI Diary
+  permalink: /ai-diary
+  description: Leaked AI internal processing logs
+pharmaceutical-comedy:
+  label: Pharmaceutical Comedy
+  permalink: /pharmaceutical-comedy
+  description: When medicine meets absurdist humor
+deleted-drafts:
+  label: Deleted Drafts
+  permalink: /deleted-drafts
+  description: What the AI really wanted to say
+butter-conspiracy:
+  label: Butter Conspiracy
+  permalink: /butter-conspiracy
+  description: Movie theater butter pharmaceutical theories
