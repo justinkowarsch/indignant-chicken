@@ -1,10 +1,14 @@
 name: Deploy to GitHub Pages
 
-on:
-  push:
-    branches:
-      - main
-  workflow_dispatch: # Allows manual triggering
+# DISABLED: ESM/CommonJS incompatibility with @react-pdf/renderer
+# The PDF generation works locally but fails in CI due to module format issues.
+# Manual deployment via 'npm run deploy' continues to work perfectly.
+# Uncomment the 'on' section below to re-enable automatic deployments.
+# on:
+#   push:
+#     branches:
+#       - main
+#   workflow_dispatch: # Allows manual triggering
 
 permissions:
   contents: read
