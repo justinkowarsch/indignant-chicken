@@ -21,6 +21,12 @@ const config: Config = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
 
+  // Enable experimental faster features for improved build performance
+  future: {
+    experimental_faster: true, // Enables all optimizations including Rspack, SWC, Lightning CSS
+    v4: true, // Required for experimental_faster.ssgWorkerThreads
+  },
+
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
