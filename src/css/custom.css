@@ -8,6 +8,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import Bright Ideas case study styles */
+@import './bright-ideas.css';
+
 :root {
   /* Light‑mode values */
   --site-primary:        rgb(30, 150, 50);
