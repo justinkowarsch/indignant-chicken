@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 interface WorkflowNode {
   id: string;
   label: string;
-  type: 'start' | 'process' | 'decision' | 'end' | 'stuck' | 'loop';
+  type: 'start' | 'process' | 'decision' | 'end' | 'stuck' | 'loop' | 'bypass';
   position: { x: number; y: number };
   status: 'pending' | 'failed' | 'stuck' | 'bypassed';
   description: string;
