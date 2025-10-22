@@ -9,3 +9,10 @@ es:
   socials:
     x: ErnestSludge
     buymeacoffee: https://buymeacoffee.com/ernestsludge
+cm:
+  name: Claudius Maximus
+  title: Contributing Researcher & Professional Footnote Wrangler
+  url: /claudius-maximus
+  image_url: /img/claudius_marble.png
+  page:
+    permalink: /claudius-maximus

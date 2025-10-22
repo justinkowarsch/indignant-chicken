@@ -19,7 +19,6 @@ const config: Config = {
   deploymentBranch: "gh-pages",
 
   onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
 
   // Enable experimental faster features for improved build performance
   future: {
@@ -34,6 +33,9 @@ const config: Config = {
 
   markdown: {
     mermaid: true,
+    hooks: {
+      onBrokenMarkdownLinks: "warn",
+    },
   },
   themes: ["@docusaurus/theme-mermaid"],
   scripts: [
