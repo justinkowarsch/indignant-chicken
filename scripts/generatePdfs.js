@@ -325,6 +325,122 @@ function createPdfDocument(data) {
   );
 }
 
+// Invoice-specific PDF document creator
+function createInvoicePdfDocument(data) {
+  return React.createElement(Document, null,
+    React.createElement(Page, { size: 'A4', style: styles.page },
+      // Invoice header
+      React.createElement(View, { style: { marginBottom: 20 } },
+        React.createElement(Text, { style: { fontSize: 20, fontWeight: 'bold', textAlign: 'center', marginBottom: 5 } }, data.title),
+        React.createElement(Text, { style: { fontSize: 10, textAlign: 'center', color: '#666' } }, `Invoice #: ${data.invoiceNumber}`),
+        React.createElement(Text, { style: { fontSize: 10, textAlign: 'center', color: '#666' } }, `Date: ${data.date}`)
+      ),
+
+      // Bill From / Bill To
+      React.createElement(View, { style: { display: 'flex', flexDirection: 'row', marginBottom: 20, gap: 20 } },
+        // Bill From
+        React.createElement(View, { style: { width: '48%', padding: 10, backgroundColor: '#f8f9fa', border: '1px solid #dee2e6' } },
+          React.createElement(Text, { style: { fontSize: 10, fontWeight: 'bold', marginBottom: 5 } }, 'FROM:'),
+          React.createElement(Text, { style: { fontSize: 9 } }, data.billFrom.name),
+          React.createElement(Text, { style: { fontSize: 9 } }, data.billFrom.proprietor),
+          data.billFrom.email && React.createElement(Text, { style: { fontSize: 9, color: '#666' } }, data.billFrom.email)
+        ),
+        // Bill To
+        React.createElement(View, { style: { width: '48%', padding: 10, backgroundColor: '#f8f9fa', border: '1px solid #dee2e6' } },
+          React.createElement(Text, { style: { fontSize: 10, fontWeight: 'bold', marginBottom: 5 } }, 'BILL TO:'),
+          React.createElement(Text, { style: { fontSize: 9 } }, data.billTo.name),
+          data.billTo.attention && React.createElement(Text, { style: { fontSize: 9 } }, `Attn: ${data.billTo.attention}`),
+          React.createElement(Text, { style: { fontSize: 9 } }, data.billTo.address),
+          data.billTo.city && React.createElement(Text, { style: { fontSize: 9 } }, data.billTo.city)
+        )
+      ),
+
+      // Line Items
+      React.createElement(View, { style: { marginBottom: 20 } },
+        // Header row
+        React.createElement(View, { style: { display: 'flex', flexDirection: 'row', backgroundColor: '#1f4e79', color: '#fff', padding: 8, fontWeight: 'bold' } },
+          React.createElement(Text, { style: { width: '75%', fontSize: 9 } }, 'Description'),
+          React.createElement(Text, { style: { width: '25%', fontSize: 9, textAlign: 'right' } }, 'Amount')
+        ),
+
+        // Line items
+        ...data.lineItems.map((item, index) => {
+          // Category headers
+          if (item.isHeader) {
+            return React.createElement(View, {
+              key: index,
+              style: { backgroundColor: '#e9ecef', padding: 6, marginTop: index > 0 ? 8 : 0 }
+            },
+              React.createElement(Text, { style: { fontSize: 9, fontWeight: 'bold', color: '#1f4e79' } }, item.category)
+            );
+          }
+
+          // Regular line items
+          const itemStyle = {
+            display: 'flex',
+            flexDirection: 'row',
+            padding: '4 8',
+            borderBottom: '1px solid #dee2e6',
+            backgroundColor: item.highlight ? '#fff3cd' : (item.isCredit ? '#d4edda' : '#fff')
+          };
+
+          return React.createElement(View, { key: index, style: itemStyle },
+            React.createElement(View, { style: { width: '75%' } },
+              React.createElement(Text, { style: { fontSize: 9 } }, item.item),
+              item.note && React.createElement(Text, { style: { fontSize: 7, color: '#666', fontStyle: 'italic', marginTop: 2 } }, item.note)
+            ),
+            React.createElement(Text, {
+              style: { width: '25%', fontSize: 9, textAlign: 'right', fontWeight: item.highlight ? 'bold' : 'normal' }
+            }, `$${item.amount.toFixed(2)}`)
+          );
+        })
+      ),
+
+      // Totals
+      React.createElement(View, { style: { marginLeft: '60%', marginBottom: 20 } },
+        React.createElement(View, { style: { display: 'flex', flexDirection: 'row', padding: '4 8', borderBottom: '1px solid #dee2e6' } },
+          React.createElement(Text, { style: { width: '50%', fontSize: 10 } }, 'SUBTOTAL:'),
+          React.createElement(Text, { style: { width: '50%', fontSize: 10, textAlign: 'right' } }, `$${data.subtotal.toFixed(2)}`)
+        ),
+        React.createElement(View, { style: { display: 'flex', flexDirection: 'row', padding: '4 8', borderBottom: '1px solid #dee2e6' } },
+          React.createElement(Text, { style: { width: '50%', fontSize: 9 } }, `Tax (${data.taxNote}):`,),
+          React.createElement(Text, { style: { width: '50%', fontSize: 9, textAlign: 'right' } }, `$${data.tax.toFixed(2)}`)
+        ),
+        React.createElement(View, { style: { display: 'flex', flexDirection: 'row', padding: '6 8', backgroundColor: '#1f4e79', color: '#fff' } },
+          React.createElement(Text, { style: { width: '50%', fontSize: 11, fontWeight: 'bold' } }, 'TOTAL DUE:'),
+          React.createElement(Text, { style: { width: '50%', fontSize: 11, fontWeight: 'bold', textAlign: 'right' } }, `$${data.total.toFixed(2)}`)
+        )
+      ),
+
+      // Payment terms
+      React.createElement(View, { style: { padding: 10, backgroundColor: '#f8f9fa', border: '1px solid #dee2e6', marginBottom: 15 } },
+        React.createElement(Text, { style: { fontSize: 9, fontWeight: 'bold', marginBottom: 3 } }, 'Payment Terms:'),
+        React.createElement(Text, { style: { fontSize: 9 } }, data.paymentTerms),
+        data.latePaymentFee && React.createElement(Text, { style: { fontSize: 8, color: '#dc3545', marginTop: 3 } }, `Late Fee: ${data.latePaymentFee}`)
+      ),
+
+      // Notes
+      data.notes && data.notes.length > 0 && React.createElement(View, { style: { marginBottom: 15 } },
+        React.createElement(Text, { style: { fontSize: 9, fontWeight: 'bold', marginBottom: 5 } }, 'Notes:'),
+        ...data.notes.map((note, index) =>
+          React.createElement(Text, { key: index, style: { fontSize: 8, marginBottom: 2, marginLeft: 10 } }, `• ${note}`)
+        )
+      ),
+
+      // Footer
+      data.footer && React.createElement(View, { style: { marginTop: 20, paddingTop: 10, borderTop: '1px solid #dee2e6' } },
+        React.createElement(Text, { style: { fontSize: 8, textAlign: 'center', fontStyle: 'italic', color: '#666' } }, data.footer)
+      ),
+
+      // Site footer
+      React.createElement(Text, {
+        style: { position: 'absolute', fontSize: 8, bottom: 20, left: 40, right: 40, textAlign: 'center', color: '#888888' },
+        fixed: true
+      }, 'theSludge.report')
+    )
+  );
+}
+
 // Helper function to create content hash
 function createContentHash(data) {
   return crypto.createHash('sha256').update(JSON.stringify(data)).digest('hex');
@@ -377,7 +493,13 @@ async function generatePdfs() {
       }
 
       console.log(`📄 Generating ${config.description}...`);
-      const pdfDocument = createPdfDocument(config.data);
+
+      // Detect document type and use appropriate renderer
+      const isInvoice = config.data.documentType === 'INVOICE' || config.data.lineItems;
+      const pdfDocument = isInvoice
+        ? createInvoicePdfDocument(config.data)
+        : createPdfDocument(config.data);
+
       const pdfBuffer = await renderToBuffer(pdfDocument);
       
       fs.writeFileSync(pdfPath, pdfBuffer);
