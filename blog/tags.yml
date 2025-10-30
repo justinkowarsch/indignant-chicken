@@ -54,3 +54,23 @@ bureaucracy:
   label: Bureaucracy
   permalink: /bureaucracy
   description: The art of turning simple tasks into impossible quests
+satire:
+  label: Satire
+  permalink: /satire
+  description: When reality is too absurd to take seriously
+fiction:
+  label: Fiction
+  permalink: /fiction
+  description: Totally made up (unlike real corporate life which is worse)
+corporate-culture:
+  label: Corporate Culture
+  permalink: /corporate-culture
+  description: The peculiar rituals and customs of the modern office tribe
+consulting:
+  label: Consulting
+  permalink: /consulting
+  description: Professional advice you didn't ask for and probably don't need
+series:
+  label: Series
+  permalink: /series
+  description: Multi-part stories for when one post isn't enough suffering
