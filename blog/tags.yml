@@ -74,3 +74,15 @@ series:
   label: Series
   permalink: /series
   description: Multi-part stories for when one post isn't enough suffering
+science:
+  label: Science
+  permalink: /science
+  description: Rigorous investigation of things that probably didn't need investigating
+canine-behavior:
+  label: Canine Behavior
+  permalink: /canine-behavior
+  description: The scientific study of dogs making questionable life choices
+field-research:
+  label: Field Research
+  permalink: /field-research
+  description: Observations from the field (wherever that field might be)
